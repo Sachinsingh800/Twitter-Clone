@@ -10,7 +10,7 @@ import style from './Account.module.css'
 function Account({label}) {
  
   return (
-    <div className={style.main} >
+    <div  className={style.main} >
     <form className={style.form}>
         <FaTwitter style={{color:"blue",fontSize:"32px",marginTop:"10px"}}/>
         <h1>Create your account</h1>
