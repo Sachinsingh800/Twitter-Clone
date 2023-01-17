@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Password from './Components/Form/Password';
 import Registration from './Components/Registration/Registration';
+import Form from './Components/Form/Form';
 
 import {
   createBrowserRouter,
-  Form,
   RouterProvider,
 } from "react-router-dom";
 
