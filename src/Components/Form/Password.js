@@ -20,7 +20,7 @@ function Password({label}) {
        <span  className={style.login}>
        <SignUp
          SignUpTxt={"Log in"}/>
-       <Link to={"/Registration"}> <h4>Don't have an account? <span style={{color:"#2997f1"}}>Sign up</span> </h4></Link>
+      <h4>Don't have an account? <span style={{color:"#2997f1"}}>  <Link to={"/Registration"}>Sign up</Link></span> </h4>
         </span> 
     </form>
   

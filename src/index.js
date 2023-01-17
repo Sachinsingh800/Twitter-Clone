@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Password from './Components/Form/Password';
 import Registration from './Components/Registration/Registration';
 import Form from './Components/Form/Form';
+import Account from './Components/Account/Account';
 
 import {
   createBrowserRouter,
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
     path: "/Form",
     element: <Form />,
   },
+  {
+    path: "/Account",
+    element: <Account />,
+  },
+ 
 
 ]);
 

@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@material-ui/pickers": "^3.3.10",
     "@mui/material": "^5.11.4",
     "@mui/styled-engine-sc": "^5.11.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,6 +16,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-ymd-date-select": "^0.3.0",
     "recoil": "^0.7.6",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
