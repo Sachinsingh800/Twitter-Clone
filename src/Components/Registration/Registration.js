@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Form.module.css'
+import style from './Registration.module.css'
 import {FaTwitter} from 'react-icons/fa';
 import Inputfield from '../../Atom/Input/Input';
 import SignUp from '../../Atom/SignUp/SignUp';
@@ -10,36 +10,33 @@ import { Link } from 'react-router-dom';
 
 
 
-function Form() {
+function Registration() {
   return (
     <div className={style.main} >
         <form className={style.form}>
             <FaTwitter style={{color:"blue",fontSize:"40px",marginTop:"10px"}}/>
-            <h1>Sign in to Twitter</h1>
+            <h1>Join Twitter today</h1>
             <SignUp 
               SignUpTxt={"Sign up with Google"}
-              Image={Image2}/>
+              Image={Image2}
+              />
           
             <br/>
             <SignUp 
              SignUpTxt={"Sign up with Apple"}
-             Image={Image}/>
+             Image={Image}
+             />
             <br/>
            <span style={{display:"flex" }}><hr/>&nbsp;&nbsp;or&nbsp;&nbsp;<hr/></span> 
            <br/>
-            <Inputfield 
-            label={"Phone, email and username"}/>
-            <br/>
             <Link to={"/Password"}><SignUp
-             SignUpTxt={"Next"}/></Link>
-            <br/>
-            <SignUp
-             SignUpTxt={"Forgot password?"}/>
-            <Link to={"/Registration"}> <h4>Don't have an account? <span style={{color:"#2997f1"}}>Sign up</span> </h4></Link>
+             SignUpTxt={"Sign up with phone or email"}/></Link>
+          <span className={style.para} >  <h5>By signing up, you agree to the <span style={{color:"#2997f1"}}>Terms of Service</span> and <span style={{color:"#2997f1"}}>Privacy Policy</span>,including <span style={{color:"#2997f1"}}>Cookie Use.</span> </h5></span> 
+            <h4>Have an account already? <span style={{color:"#2997f1"}}>Log In</span> </h4>
         </form>
       
     </div>
   )
 }
 
-export default Form
+export default Registration

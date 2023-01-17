@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import style from './Password.module.css'
 
 
-function Password() {
+function Password({label}) {
  
   return (
     <div className={style.main} >
@@ -16,7 +16,7 @@ function Password() {
         <h1>Enter your Password</h1>
        
         <Inputfield  
-        label={"passwpord"} />
+        label={"password"} />
        <span  className={style.login}>
        <SignUp
          SignUpTxt={"Log in"}/>

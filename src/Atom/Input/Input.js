@@ -22,7 +22,7 @@ export default function Inputfield({label}) {
   return (
     <div className="App">
       <div className='input'>
-        <TextInput label="Phone,email or username" />
+        <TextInput label={label} />
       </div>
     </div>
   );

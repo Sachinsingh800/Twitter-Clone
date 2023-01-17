@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import  Demo from './Components/Form/Demo'
 import Password from './Components/Form/Password';
+import Registration from './Components/Registration/Registration';
 
 import {
   createBrowserRouter,
+  Form,
   RouterProvider,
 } from "react-router-dom";
 
@@ -22,12 +23,16 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/Demo",
-    element: <Demo />,
-  },
-  {
     path: "/Password",
     element: <Password />,
+  },
+  {
+    path: "/Registration",
+    element: <Registration />,
+  },
+  {
+    path: "/Form",
+    element: <Form />,
   },
 
 ]);
