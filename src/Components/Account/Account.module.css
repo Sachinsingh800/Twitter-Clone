@@ -1,5 +1,5 @@
 .login{
-    margin-top: 90px;
+    margin-top: 30px;
 }
 .form{
     width: 36rem;
@@ -36,8 +36,10 @@
      margin-top: 0;
 }
 .date{
-    border: 1px red solid;
+    display: flex;
+    justify-content: space-around;
 }
+
 .useemail:hover{
    text-decoration: underline;
    color: #2997f1;

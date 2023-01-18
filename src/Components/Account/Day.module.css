@@ -1,0 +1,11 @@
+.select{
+    width: 4rem;
+    height: 3rem;
+    background-color: black;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.select:focus{
+    border: 1px #2997f1 solid;
+    color:  #2997f1;
+}
