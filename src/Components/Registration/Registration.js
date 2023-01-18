@@ -31,8 +31,8 @@ function Registration() {
            <br/>
             <Link to={"/Account"}><SignUp
              SignUpTxt={"Sign up with phone or email"}/></Link>
-          <span className={style.para} >  <h5>By signing up, you agree to the <span style={{color:"#2997f1"}}>Terms of Service</span> and <span style={{color:"#2997f1"}}>Privacy Policy</span>,including <span style={{color:"#2997f1"}}>Cookie Use.</span> </h5></span> 
-       <h4>Have an account already? <span style={{color:"#2997f1"}}>  <Link to={"/Form"} >Log In</Link> </span></h4>
+          <span className={style.para} >  <h5 style={{color:"white"}}>By signing up, you agree to the <span style={{color:"#2997f1"}}>Terms of Service</span> and <span style={{color:"#2997f1"}}>Privacy Policy</span>,including <span style={{color:"#2997f1"}}>Cookie Use.</span> </h5></span> 
+       <h4 style={{color:"white"}}>Have an account already? <span style={{color:"#2997f1"}}>  <Link to={"/Form"} >Log In</Link> </span></h4>
         </form>
       
     </div>

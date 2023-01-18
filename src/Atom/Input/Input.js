@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
-import './Input.css';
-
-function TextInput({ type = 'text', label }) {
-  const [value, setValue] = useState('');
-
+import React, { useState } from "react";
+import style from "./Input.module.css";
+function Input(props) {
+  const [value, setValue] = useState("");
   function handleChange(e) {
     setValue(e.target.value);
   }
-
   return (
-    <div className="input-container">
-      <input type={type} value={value} onChange={handleChange} />
-      <label className={value && 'filled'} >
-        {label}
-      </label>
+    <div>
+      <input  
+        required
+        pattern={props.pattern}
+        className={style.input}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={(e)=>props.handleOnchange(e.target.value)}
+      ></input>
     </div>
   );
 }
 
-export default function Inputfield({label}) {
-  return (
-    <div className="App">
-      <div className='input'>
-        <TextInput label={label} />
-      </div>
-    </div>
-  );
-}
+export default Input;

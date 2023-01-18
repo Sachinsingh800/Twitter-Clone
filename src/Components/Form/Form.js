@@ -6,6 +6,7 @@ import SignUp from '../../Atom/SignUp/SignUp';
 import Image from './apple.png'
 import Image2 from './google.png'
 import { Link } from 'react-router-dom';
+import Input from '../../Atom/Input/Input';
 
 
 
@@ -15,7 +16,7 @@ function Form() {
     <div className={style.main} >
         <form className={style.form}>
             <FaTwitter style={{color:"blue",fontSize:"40px",marginTop:"10px"}}/>
-            <h1>Sign in to Twitter</h1>
+            <h1 style={{color:"white"}}>Sign in to Twitter</h1>
             <SignUp 
               SignUpTxt={"Sign up with Google"}
               Image={Image2}/>
@@ -25,10 +26,9 @@ function Form() {
              SignUpTxt={"Sign up with Apple"}
              Image={Image}/>
             <br/>
-           <span style={{display:"flex" }}><hr/>&nbsp;&nbsp;or&nbsp;&nbsp;<hr/></span> 
+           <span style={{display:"flex",color:"white" }}><hr/>&nbsp;&nbsp;or&nbsp;&nbsp;<hr/></span> 
            <br/>
-            <Inputfield 
-            label={"Phone, email and username"}/>
+            <Input placeholder={"Phone, email or username"} /> 
             <br/>
             <Link to={"/Password"}><SignUp
              SignUpTxt={"Next"}/></Link>

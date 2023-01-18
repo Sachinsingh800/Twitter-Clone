@@ -1,0 +1,20 @@
+
+.input{
+  width: 298px;
+  height: 3rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  border: 1px white solid;
+  color: white;
+  background-color: #000000;
+  border-radius: 4px;
+
+}
+.input:focus{
+  border: 1px  solid #2997f1;
+}
+.input:hover{
+  border: 1px  solid #2997f1;
+}
