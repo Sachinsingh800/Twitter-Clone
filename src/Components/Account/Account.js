@@ -8,9 +8,15 @@ import style from './Account.module.css'
 import MonthDropdown from './Month'
 import DayDropdown from './Day';
 import YearDropDown from './Year';
+import { useState } from 'react';
 
 
 function Account({label}) {
+  const [toggle, setToggle] = useState(false);
+  function emailLogin() {
+    setToggle(!toggle);
+  }
+
  function clicked(){
   alert("Clicked")
  }
@@ -24,11 +30,38 @@ function Account({label}) {
         label={"Name"} />
         <br/>
 
-     <div>
-        <Inputfield  
-        label={"Phone"} />
-       <span className={style.useemail}><h6 style={{color:"#2997f1",marginLeft:"200px",marginTop:"7px"}}>Use email instead</h6></span> 
-    </div> 
+        {toggle ? (
+          <div>
+            <Inputfield label={"Phone"} />
+          </div>
+        ) : (
+          <div>
+            <Inputfield label={"Email"} />
+          </div>
+        )}
+        <span onClick={emailLogin} className={style.useemail}>
+          {toggle ? (
+            <h6
+              style={{
+                color: "#2997f1",
+                marginLeft: "200px",
+                marginTop: "7px",
+              }}
+            >
+              Use email instead
+            </h6>
+          ) : (
+            <h6
+              style={{
+                color: "#2997f1",
+                marginLeft: "200px",
+                marginTop: "7px",
+              }}
+            >
+              Use Phone instead
+            </h6>
+          )}
+        </span>
         <div className={style.Dob}>
             <h5 style={{fontWeight:550}}>Date of birth</h5>
             <h5 style={{marginTop:"-20px", fontWeight: "200"}}>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else. </h5>
