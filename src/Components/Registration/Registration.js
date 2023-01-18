@@ -15,7 +15,7 @@ function Registration() {
     <div className={style.main} >
         <form className={style.form}>
             <FaTwitter style={{color:"blue",fontSize:"40px",marginTop:"10px"}}/>
-            <h1>Join Twitter today</h1>
+            <h1 style={{color:"white"}}>Join Twitter today</h1>
             <SignUp 
               SignUpTxt={"Sign up with Google"}
               Image={Image2}
@@ -27,7 +27,7 @@ function Registration() {
              Image={Image}
              />
             <br/>
-           <span style={{display:"flex" }}><hr/>&nbsp;&nbsp;or&nbsp;&nbsp;<hr/></span> 
+           <span style={{display:"flex" }}><hr/>&nbsp;&nbsp;<span style={{color:"white"}}>or</span>&nbsp;&nbsp;<hr/></span> 
            <br/>
             <Link to={"/Account"}><SignUp
              SignUpTxt={"Sign up with phone or email"}/></Link>

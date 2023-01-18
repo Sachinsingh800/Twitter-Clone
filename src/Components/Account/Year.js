@@ -16,7 +16,7 @@ function YearDropdown() {
     <div>
       <select className={style.select} value={selectedYear} onChange={e => setSelectedYear(e.target.value)}>
         <option value="" disabled>Year</option>
-        {Years.map(Year => <option style={{backgroundColor:"black"}} key={Year} value={Year}>{Year}</option>)}
+        {Years.map(Year => <option style={{backgroundColor:"black",color:"white"}} key={Year} value={Year}>{Year}</option>)}
       </select>
       {selectedYear && <p>Selected Year: {selectedYear}</p>}
     </div>

@@ -35,7 +35,7 @@ function Form() {
             <br/>
             <SignUp
              SignUpTxt={"Forgot password?"}/>
-           <h4>Don't have an account? <span style={{color:"#2997f1"}}> <Link to={"/Registration"}> Sign up</Link></span> </h4>
+           <h4 style={{color:"white"}}>Don't have an account? <span style={{color:"#2997f1"}}> <Link to={"/Registration"}> Sign up</Link></span> </h4>
         </form>
       
     </div>
