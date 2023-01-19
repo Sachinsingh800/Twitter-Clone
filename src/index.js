@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Password from './Components/Form/Password';
-import Registration from './Components/Registration/Registration';
-import Form from './Components/Form/Form';
-import Account from './Components/Account/Account';
+import Registration from './Components/Form/Registration/Registration/Registration';
+import Login from './Components/Form/LoginPage/LogIn/LoginPage';
 import HomePage from './Components/HomePage/HomePage';
 
 import {
@@ -26,20 +24,12 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/Password",
-    element: <Password />,
-  },
-  {
     path: "/Registration",
     element: <Registration />,
   },
   {
-    path: "/Form",
-    element: <Form />,
-  },
-  {
-    path: "/Account",
-    element: <Account />,
+    path: "/Login",
+    element: <Login />,
   },
   {
     path: "/HomePage",

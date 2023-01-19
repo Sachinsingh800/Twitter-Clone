@@ -1,5 +1,5 @@
 import "./App.css";
-import Form from "./Components/Form/Form";
+import Login from "./Components/Form/LoginPage/LogIn/LoginPage";
 import HomePage from "./Components/HomePage/HomePage";
 
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-     <Form />
+     <Login />
     
      
     </>

@@ -1,7 +1,24 @@
-.btn{
-    background-color: red;
-    padding: 0.5rem 1rem ;
+body{
+    /* background-color: black; */
+}
+.signbtn{
+    height: 2.5rem;
+    width: 298px;
+    font-size: 1rem;
     border: 0;
-    border-radius: 5px;
-    box-shadow: 2px 3px 6px 2px;
-} 
+    color: #000000;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-weight: 400;
+}
+.signbtn:hover{
+          background-color: rgba(255, 255, 255, 0.712);
+          
+}
+.img1{
+    height: 20px;
+    margin-right: 5px;
+}

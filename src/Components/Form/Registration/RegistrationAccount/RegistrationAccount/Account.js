@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FaTwitter } from "react-icons/fa";
-import SignUp from "../../Atom/SignUp/SignUp";
+import Button from "../../../../../Atom/Button/Button"
 import style from "./Account.module.css";
-import Input from "../../Atom/Input/Input";
-import MonthDropdown from "./Month";
-import YearDropdown from "./Year";
-import DayDropdown from "./Day";
+import Input from "../../../../../Atom/Input/Input";
+import MonthDropdown from "../Month/Month";
+import YearDropdown from "../Year/Year";
+import DayDropdown from "../Day/Day";
 
 
 function Account({ label }) {
@@ -101,7 +101,7 @@ localStorage.setItem("user", JSON.stringify(data))
         </div>
 
         <span className={style.login}>
-          <SignUp   SignUpTxt={"Next"} />
+          <Button SignUpTxt={"Next"} />
         </span> 
       </form>
     </div>

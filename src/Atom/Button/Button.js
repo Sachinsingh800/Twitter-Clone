@@ -1,12 +1,12 @@
 import React from 'react'
+import Image from './google.png'
 import style from './Button.module.css'
 
-function Button({btnText, handleClicked}) {
+function Button({SignUpTxt,Image,handleClick}) {
   return (
-    <button onClick={handleClicked} className={style.btn}>
-      {btnText}
-    
-    </button>
+    <div>
+        <button onClick={handleClick} className={style.signbtn}><img className={style.img1} src={Image}></img>{SignUpTxt}</button>
+    </div>
   )
 }
 
