@@ -7,11 +7,13 @@ import Password from './Components/Form/Password';
 import Registration from './Components/Registration/Registration';
 import Form from './Components/Form/Form';
 import Account from './Components/Account/Account';
+import HomePage from './Components/HomePage/HomePage';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/Account",
     element: <Account />,
+  },
+  {
+    path: "/HomePage",
+    element: <HomePage />,
   },
  
 

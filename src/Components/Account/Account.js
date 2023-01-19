@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { FaTwitter } from "react-icons/fa";
-//import Inputfield from "../../Atom/Input/Input";
 import SignUp from "../../Atom/SignUp/SignUp";
-import { json, Link } from "react-router-dom";
 import style from "./Account.module.css";
 import Input from "../../Atom/Input/Input";
 import MonthDropdown from "./Month";
@@ -16,9 +14,26 @@ function Account({ label }) {
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
   const [data, setData] = useState([]);
+ 
+
+  // const AddingUser=(Name,Email,Phone)=>{
+  //   //    newUser={
+  //   //   name:Name,
+  //   //   email:Email,
+  //   //   phone:Phone,
+  //   // }
+  // }
+    
 
 localStorage.setItem("user", JSON.stringify(data))
 
+// function handleSummit(e){
+//   console.log("clicked")
+//   e.preventDefault()
+//   AddingUser(Name,Email,Phone)
+// }
+
+// setData([...data, newUser])
   function emailLogin() {
     setToggle(!toggle);
   }
@@ -86,7 +101,7 @@ localStorage.setItem("user", JSON.stringify(data))
         </div>
 
         <span className={style.login}>
-          <SignUp SignUpTxt={"Next"} />
+          <SignUp   SignUpTxt={"Next"} />
         </span> 
       </form>
     </div>

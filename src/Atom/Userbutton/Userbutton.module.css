@@ -1,0 +1,23 @@
+.button{
+    width: 13rem;
+    height: 3.5rem;
+    border-radius:20px;
+}
+.img{
+    height: 40px;
+    margin-left: -3rem;
+}
+.name{
+    font-size: 10px;
+}
+.popover{
+    display: flex;
+    align-items: center;
+}
+.pop{
+    margin-top:-4rem;
+}
+ul li{
+    list-style: none;
+    font-weight: 900;
+}
