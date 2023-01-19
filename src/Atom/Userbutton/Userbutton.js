@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 // import { style } from '@mui/system';
@@ -12,7 +11,7 @@ export default function PopoverPopupState() {
     <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div>
-          <Button className={style.button} variant="contained" {...bindTrigger(popupState)}>
+          <button className={style.button} variant="contained" {...bindTrigger(popupState)}>
             <div className={style.popover}>
 
              
@@ -25,7 +24,7 @@ export default function PopoverPopupState() {
            
             
             </div>
-          </Button>
+          </button>
           <Popover className={style.pop}
             {...bindPopover(popupState)}
             anchorOrigin={{

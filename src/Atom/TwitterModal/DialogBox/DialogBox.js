@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import style  from './DialogBox.module.css'
@@ -30,9 +29,9 @@ export default function DialogBox() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Slide in alert dialog
-      </Button>
+      <button className={style.button1}  onClick={handleClickOpen}>
+        Tweet
+      </button>
       <Dialog open={open} >
      
       <button className={style.button} onClick={handleClose}>x</button>
