@@ -1,10 +1,11 @@
 import React from 'react'
 import style from './RightSection.module.css'
+import SearchBar from '../../Components/RightSectionComponent/SearchBar/SearchBar'
 
 function RightSection() {
   return (
     <div className={style.main}>
-      <h1>RightSection</h1>
+      <div><SearchBar /></div>  
     </div>
   )
 }

@@ -1,5 +1,8 @@
 .main{
-    background-color: rgb(255, 238, 0);
+   
     width: 23rem;
     height: 38.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
