@@ -23,6 +23,7 @@ function RightComponent() {
         Card.map((card, id )=> 
          <div className={style.card} key={id} >{card.cardData}</div>)
       }
+       <button className={style.button}>Show more </button>
     </div>
   )
 }

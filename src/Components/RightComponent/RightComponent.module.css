@@ -14,3 +14,12 @@
     margin-left: 10px;
     font-weight: 700;
 }
+.button{
+    margin-left: rem;
+    border: none;
+    background-color: white;
+    color: blue;
+    margin-bottom: 10px;
+    font-size: large;
+    width: 7rem;
+}

@@ -1,18 +1,21 @@
 .main{
-    border: 1px red solid;
+    border: 1px rgb(0, 0, 0) solid;
     border-radius: 10px;
 }
 .card{
     padding: 15px;
 }
 .main h2{
-    margin-left: 2.5rem;
+    margin-left: 1rem;
 }
 .button{
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     border: none;
     background-color: white;
     color: blue;
     margin-bottom: 10px;
     font-size: large;
+}
+.card:hover{
+    background-color: rgb(205, 211, 216);
 }

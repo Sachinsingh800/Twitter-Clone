@@ -10,7 +10,7 @@ function RightSection() {
     <div className={style.main}>
       <div><SearchBar /></div>  
       <br/>
-     {/* <RightComponent/> */}
+     <RightComponent/>
     
      <br/>
    <RightSideSecondCard/>
