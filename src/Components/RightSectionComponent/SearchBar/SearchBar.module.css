@@ -1,7 +1,7 @@
 .input{
     width: 13rem;
     height: 2rem;
-    background-color: transparent;
+    background-color: grey;
     border: none;
     outline: none;
 }
@@ -15,7 +15,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px rgb(238, 255, 0) solid;
+    border: 1px rgb(0, 0, 0) solid;
+    background-color: aqua;
 }
 .icon2{
     font-size: 20px;

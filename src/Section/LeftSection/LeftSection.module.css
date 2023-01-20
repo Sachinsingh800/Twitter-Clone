@@ -1,11 +1,12 @@
 .main{
-   /* position: fixed; */
+   position: fixed;
     width: 24rem;
     height: 38.5rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-column: 1/2;
     align-items: center;
     border: 1px red solid;
+    justify-content: center;
 }
 .logo{
     font-size: 2rem;
@@ -38,8 +39,4 @@
 }
 .OpenPopover{
     margin-top: 4rem;
-}
-.body{
-    /* background-color: red; */
-    position: fixed;
 }

@@ -1,0 +1,26 @@
+.img{
+    height:  3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+.Img2{
+    height:23rem;
+    border-radius: 1.5rem;
+    margin-left: 1.5rem;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.para{
+    padding: 1rem;
+    margin-top: -2rem;
+    margin-left: 2.5rem;
+}
+.body{
+    display: flex;
+    align-items: center;
+   margin-right: 18rem;
+}
