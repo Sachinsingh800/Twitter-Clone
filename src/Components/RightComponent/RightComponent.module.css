@@ -1,11 +1,12 @@
 .main{
-    border: 1px rgb(3, 3, 3) solid;
+ 
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    background-color: rgb(228, 240, 238);
 }
 .card:hover{
- background-color: rgb(206, 212, 212);
+ background-color: rgb(205, 211, 216);
 }
 .card{
  padding: 8px;
@@ -22,4 +23,5 @@
     margin-bottom: 10px;
     font-size: large;
     width: 7rem;
+    background-color: transparent;
 }

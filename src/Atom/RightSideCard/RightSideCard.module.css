@@ -2,6 +2,7 @@
    padding: none;
    display: flex;
    align-items: center;
+   font-family: Arial, Helvetica, sans-serif;
 }
 .trend{
     font-size: small;
@@ -10,5 +11,6 @@
     font-weight: 700;
 }
 .icon{
-     margin-left:11rem;
+     margin-left:7rem;
+     font-size: larger;
 }

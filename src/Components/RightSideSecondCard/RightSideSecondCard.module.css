@@ -1,6 +1,7 @@
 .main{
-    border: 1px rgb(0, 0, 0) solid;
+
     border-radius: 10px;
+    background-color: rgb(228, 240, 238);
 }
 .card{
     padding: 15px;
@@ -15,6 +16,7 @@
     color: blue;
     margin-bottom: 10px;
     font-size: large;
+    background-color: transparent;
 }
 .card:hover{
     background-color: rgb(205, 211, 216);

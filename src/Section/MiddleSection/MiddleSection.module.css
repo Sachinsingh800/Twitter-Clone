@@ -3,7 +3,6 @@
    grid-column: 2/3;
     width: 36rem;
     height: 38.4rem;
-    border: 1px rgb(51, 255, 0) solid;
     overflow-y: scroll;
 }
 .header{

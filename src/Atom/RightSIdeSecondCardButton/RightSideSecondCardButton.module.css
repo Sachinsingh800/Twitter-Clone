@@ -5,11 +5,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .user{
     display: flex;
     gap: 7px;
-  
 }
 .id{
     font-size: small;

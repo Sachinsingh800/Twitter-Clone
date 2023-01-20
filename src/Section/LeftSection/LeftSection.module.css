@@ -1,11 +1,10 @@
 .main{
    position: fixed;
-    width: 24rem;
+    width: 24.5rem;
     height: 38.5rem;
     display: grid;
     grid-column: 1/2;
     align-items: center;
-    border: 1px red solid;
     justify-content: center;
 }
 .logo{
@@ -17,8 +16,9 @@
 
 .List{
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
 .link{
@@ -29,14 +29,19 @@
 }
 .List{
     width: 9rem;
+    height: 1.5rem;
     border-radius: 20px;
     padding: 3px;
     display: flex;
-    align-self: center;
+    align-items: center;
 }
 .option{
-    margin-left: 5px;
+    margin-left: 10px;
 }
 .OpenPopover{
     margin-top: 4rem;
+}
+.icon{
+    font-size: large;
+    margin-left: 10px;
 }
