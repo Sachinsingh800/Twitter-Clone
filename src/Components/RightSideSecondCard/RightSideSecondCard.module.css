@@ -1,0 +1,18 @@
+.main{
+    border: 1px red solid;
+    border-radius: 10px;
+}
+.card{
+    padding: 15px;
+}
+.main h2{
+    margin-left: 2.5rem;
+}
+.button{
+    margin-left: 2.5rem;
+    border: none;
+    background-color: white;
+    color: blue;
+    margin-bottom: 10px;
+    font-size: large;
+}

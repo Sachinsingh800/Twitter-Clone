@@ -26,3 +26,6 @@ ul li{
 .button:hover{
   background-color: rgb(224, 224, 224);
 }
+.dot{
+    margin-left: 15px;
+}

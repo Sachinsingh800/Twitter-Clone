@@ -1,0 +1,28 @@
+.img{
+    height: 40px;;
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.user{
+    display: flex;
+    gap: 6px;
+}
+.id{
+    font-size: small;
+}
+.button{
+    width: 5rem;
+    height: 1.9rem;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+.button1{
+    width: 5rem;
+    height: 1.9rem;
+    border-radius: 15px;
+    border: .5px black solid;
+}

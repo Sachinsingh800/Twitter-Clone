@@ -1,0 +1,14 @@
+.main{
+   padding: none;
+   display: flex;
+   align-items: center;
+}
+.trend{
+    font-size: small;
+}
+.hastag{
+    font-weight: 700;
+}
+.icon{
+     margin-left:11rem;
+}

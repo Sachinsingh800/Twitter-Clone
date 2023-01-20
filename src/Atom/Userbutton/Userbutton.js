@@ -5,6 +5,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 // import { style } from '@mui/system';
 import style from './Userbutton.module.css'
 import Image from '../../Assest/Image/Profile.png'
+import { BsThreeDots} from 'react-icons/bs'
 
 export default function PopoverPopupState() {
   return (
@@ -20,7 +21,7 @@ export default function PopoverPopupState() {
                <div className={style.name}>sachin</div> 
                <div className={style.name}>sachin@gmail123</div> 
                </span>
-               
+             <span className={style.dot}><BsThreeDots/></span> 
            
             
             </div>

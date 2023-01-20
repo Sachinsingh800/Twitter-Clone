@@ -1,0 +1,16 @@
+.main{
+    border: 1px rgb(3, 3, 3) solid;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.card:hover{
+ background-color: rgb(206, 212, 212);
+}
+.card{
+ padding: 8px;
+}
+.heading{
+    margin-left: 10px;
+    font-weight: 700;
+}
