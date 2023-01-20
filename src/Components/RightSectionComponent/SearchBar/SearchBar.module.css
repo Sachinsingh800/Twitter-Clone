@@ -1,12 +1,12 @@
 .input{
-    width: 15rem;
+    width: 13rem;
     height: 2rem;
     background-color: transparent;
     border: none;
     outline: none;
 }
 .inputmain{
-    width: 21.7rem;
+    width: 19rem;
     height: 2.3rem;
     border-radius: 25px;
     position: relative;
@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    border: 1px rgb(238, 255, 0) solid;
 }
 .icon2{
     font-size: 20px;

@@ -28,7 +28,8 @@ function LeftSection() {
  
   return (
     <div className={style.main}>
-        <spna className={style.logo}><FaTwitter/></spna>
+      <div className={style.body}>
+      <spna className={style.logo}><FaTwitter/></spna>
         <div>
         {Navoption.map(({icon,Option ,path})=>
     <Link to={path} className={style.link}> 
@@ -42,6 +43,9 @@ function LeftSection() {
       <div className={style.OpenPopover}>
       <PopoverPopupState/>
       </div>
+
+      </div>
+      
     </div>
   )
 }

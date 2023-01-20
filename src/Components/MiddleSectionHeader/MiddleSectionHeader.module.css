@@ -1,0 +1,21 @@
+.button{
+    display: flex;
+}
+.button button{
+    width: 18rem;
+    height: 2.9rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+}
+.main h2{
+    margin-left: 1rem;
+}
+.button button:hover{
+    background-color: rgb(231, 228, 224);
+}
+.main{
+    position: sticky;
+    border: 1px black solid;
+    height: 7.3rem;
+}

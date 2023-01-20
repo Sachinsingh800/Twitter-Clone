@@ -1,10 +1,11 @@
 import React from 'react'
 import style from './MiddleSection.module.css'
+import MiddleSectionHeader from '../../Components/MiddleSectionHeader/MiddleSectionHeader'
 
 function MiddleSection() {
   return (
     <div className={style.main}>
-      <h1>middle section</h1>
+       <div className={style.header}><MiddleSectionHeader /></div>  
     </div>
   )
 }
