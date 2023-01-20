@@ -18,4 +18,6 @@
     position: sticky;
     border: 1px black solid;
     height: 7.3rem;
+    background-color: rgb(71, 70, 70);
+    opacity: 0.9;
 }
