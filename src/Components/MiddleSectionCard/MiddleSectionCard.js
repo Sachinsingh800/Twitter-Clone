@@ -9,7 +9,7 @@ function MiddleSectionCard() {
     <div className={style.main} >
         <div  className={style.body}>
             <img  className={style.img} src={Image} alt="Profile" />
-            <h2>Narendera modi</h2>
+            <h2>Narendra modi</h2>
             <h6>@Immodi</h6>
       </div>
       <div className={style.para}>
