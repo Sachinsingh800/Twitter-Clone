@@ -28,7 +28,7 @@ function LeftSection() {
  
   return (
     <div className={style.main}>
-      <div className={style.body}>
+   
       <spna className={style.logo}><FaTwitter/></spna>
         <div>
         {Navoption.map(({icon,Option ,path})=>
@@ -36,16 +36,12 @@ function LeftSection() {
         <p className={style.List}><span className={style.icon}>{icon}</span><spna className={style.option}>{Option}</spna></p>
         </Link> ) }
         </div>
-      <div>
-       {/* <div> <TwitterModal/></div> */}
+      <div className={style.dialogbox}>
        <DialogBox />
       </div>
       <div className={style.OpenPopover}>
       <PopoverPopupState/>
-      </div>
-
-      </div>
-      
+      </div> 
     </div>
   )
 }
