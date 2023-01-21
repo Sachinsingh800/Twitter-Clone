@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import style from "./Input.module.css";
-function Input(props) {
-  const [value, setValue] = useState("");
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-  return (
-    <div>
-      <input  
-        required
-        pattern={props.pattern}
-        className={style.input}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={(e)=>props.handleOnchange(e.target.value)}
-      ></input>
-    </div>
-  );
-}
 
-export default Input;
+export default function Input (
+  {
+      placeholder,
+      handleOnChange ,
+      type ,
+      customStyleInput ,
+      value
+  }
+) {
+  return(
+      <input 
+          placeholder={placeholder}
+          onChange = {(e) => handleOnChange(e.target.value)}
+          type = {type || 'text'}
+          className = {`${style.inputField} ${customStyleInput}`}
+          value = {value}
+      />
+  )
+}

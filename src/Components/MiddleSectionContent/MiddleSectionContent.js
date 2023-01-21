@@ -27,7 +27,6 @@ function MiddleSectionContent() {
         <div key={index}>{card.Card}</div>
         )
       }
-      
     </div>
   )
 }

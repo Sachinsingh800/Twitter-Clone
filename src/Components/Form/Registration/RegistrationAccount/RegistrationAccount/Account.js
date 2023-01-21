@@ -6,46 +6,113 @@ import Input from "../../../../../Atom/Input/Input";
 import MonthDropdown from "../Month/Month";
 import YearDropdown from "../Year/Year";
 import DayDropdown from "../Day/Day";
+import {isUserLoggedInAtom}  from "../../../../../RecoilState/RecoilAtom"
+import { useSetRecoilState } from "recoil";
+import {useNavigate} from "react-router-dom"
+
+import { 
+  isValidEmailSyntax ,
+  isValidMobile,
+  isOnlyLetters,
+  isValidString
+} from '../../../../../../src/Helper/Helper'
 
 
-function Account({ label }) {
+
+function Account() {
   const [toggle, setToggle] = useState(false);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
-  const [data, setData] = useState([]);
- 
+  const [Password, setPassword] = useState(" ");
+  const navigate = useNavigate()
+  const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
 
-  // const AddingUser=(Name,Email,Phone)=>{
-  //   //    newUser={
-  //   //   name:Name,
-  //   //   email:Email,
-  //   //   phone:Phone,
-  //   // }
-  // }
+
+
+  function submitFunction(){
+  
+    // window.location.assign("/HomePage")
+
+    if(!isValidString(Name))
+    {
+      alert("add proper Name")
+      return
+    }
+    if(toggle===true)
+    {
+      if(!isValidMobile(Phone))
+      {
+        alert("add proper PhoneNumber ")
+        return
+      }
+    }
+    else
+    {
+        if(!isValidEmailSyntax(Email))
+      {
+        alert("Give correct email")
+      }  
+  }
+  
+    if(!isValidString(Password))
+    {
+          alert('please set your account password !!')
+           return
+    }
+
+  
+      
+// if(!isValidString(password)){
+//     alert('please set your account password !!')
+//     return
+// }
+// if(!isValidString(date) || !isValidString(month) || !isValidString(year)){
+//     alert('Invalid Date !!')
+//     return
+// }
+const userData = {
+        Name ,
+    ...(Phone && {Phone}),
+    ...(Email && {Email}),
+       Password,
+    // dateOfBirth : `${date + '/' + month + '/' + year}`
+}
+
+localStorage.setItem('userData',JSON.stringify(userData))
+alert("successfully submited")
+    setUserLoginStatus(true)
+   
+    navigate('/HomePage')
     
 
-localStorage.setItem("user", JSON.stringify(data))
+}
 
-// function handleSummit(e){
-//   console.log("clicked")
-//   e.preventDefault()
-//   AddingUser(Name,Email,Phone)
-// }
 
-// setData([...data, newUser])
+
   function emailLogin() {
     setToggle(!toggle);
   }
+
   function HandlePhone(InputPhone) {
     setPhone(InputPhone);
+   
   }
+
   function HandleEmail(InputEmail) {
     setEmail(InputEmail);
   }
+
   function HandleName(InputName) {
     setName(InputName);
   }
+  function HandlePassword(InputPassword) {
+    // console.log(Password)
+    setPassword(InputPassword);
+  }
+
+
+
   return (
     <div className={style.main}>
       <form className={style.form}>
@@ -53,15 +120,15 @@ localStorage.setItem("user", JSON.stringify(data))
           style={{ color: "blue", fontSize: "32px", marginTop: "10px" }}
         />
         <h1 style={{color:"white"}}>Create your account</h1>
-        <Input placeholder={"Name"} pattern={"[A-Za-z][A-Za-z0-9]{7,29}$"}  handleOnChange={HandleName} />
+        <Input placeholder={"Name"} type="name"  handleOnChange={HandleName} />
         <br />
         {toggle ? (
           <div>
-            <Input placeholder={"Phone"} pattern={"^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"} handleOnChange={HandlePhone} />
+            <Input placeholder={"Phone"} type="phone" handleOnChange={HandlePhone} />
           </div>
         ) : (
           <div>
-            <Input placeholder={"Email"} pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"} handleOnChange={HandleEmail} />
+            <Input placeholder={"Email"} type="email"  handleOnChange={HandleEmail} />
           </div>
         )}
         <span onClick={emailLogin} className={style.useemail}>
@@ -87,6 +154,7 @@ localStorage.setItem("user", JSON.stringify(data))
             </h6>
           )}
         </span>
+        <Input  placeholder={"Password"} type="password"  handleOnChange={HandlePassword}/>
         <div className={style.Dob}>
           <h5 style={{ fontWeight: 550 ,color:"white"}}>Date of birth</h5>
           <h5 style={{ marginTop: "-20px", fontWeight: "200" ,color:"white"}}>
@@ -101,7 +169,7 @@ localStorage.setItem("user", JSON.stringify(data))
         </div>
 
         <span className={style.login}>
-          <Button SignUpTxt={"Next"} />
+          <Button handleClick={submitFunction} SignUpTxt={"Next"} />
         </span> 
       </form>
     </div>
@@ -109,7 +177,6 @@ localStorage.setItem("user", JSON.stringify(data))
 }
 
 export default Account;
-
 
 
 
