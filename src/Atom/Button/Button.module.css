@@ -12,10 +12,11 @@ body{
     display: flex;
     justify-content: center;
     padding: 10px;
-    font-weight: 400;
+    font-weight: 500;
+    border: 1px rgb(196, 191, 191) solid;
 }
 .signbtn:hover{
-          background-color: rgba(255, 255, 255, 0.712);
+          background-color: rgba(224, 219, 219, 0.712);
           
 }
 .img1{

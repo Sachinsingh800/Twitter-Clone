@@ -116,19 +116,16 @@ alert("successfully submited")
   return (
     <div className={style.main}>
       <form className={style.form}>
-        <FaTwitter
-          style={{ color: "blue", fontSize: "32px", marginTop: "10px" }}
-        />
-        <h1 style={{color:"white"}}>Create your account</h1>
-        <Input placeholder={"Name"} type="name"  handleOnChange={HandleName} />
-        <br />
+      <FaTwitter className={style.logo} />
+        <h1 >Create your account</h1>
+        <Input  customStyleInput={style.input} placeholder={"Name"} type="name"  handleOnChange={HandleName} />
         {toggle ? (
           <div>
-            <Input placeholder={"Phone"} type="phone" handleOnChange={HandlePhone} />
+            <Input  customStyleInput={style.input} placeholder={"Phone"} type="phone" handleOnChange={HandlePhone} />
           </div>
         ) : (
           <div>
-            <Input placeholder={"Email"} type="email"  handleOnChange={HandleEmail} />
+            <Input  customStyleInput={style.input} placeholder={"Email"} type="email"  handleOnChange={HandleEmail} />
           </div>
         )}
         <span onClick={emailLogin} className={style.useemail}>
@@ -154,13 +151,13 @@ alert("successfully submited")
             </h6>
           )}
         </span>
-        <Input  placeholder={"Password"} type="password"  handleOnChange={HandlePassword}/>
+        <Input  customStyleInput={style.input1}  placeholder={"Password"} type="password"  handleOnChange={HandlePassword}/>
         <div className={style.Dob}>
-          <h5 style={{ fontWeight: 550 ,color:"white"}}>Date of birth</h5>
-          <h5 style={{ marginTop: "-20px", fontWeight: "200" ,color:"white"}}>
+          <h5 >Date of birth</h5>
+          <p>
             This will not be shown publicly. Confirm your own age, even if this
-            account is for a business, a pet, or something else.{" "}
-          </h5>
+            account is for a business, a pet, or something else.
+          </p>
           <div className={style.date}>
        <span><MonthDropdown /></span> 
         <span><DayDropdown/></span>

@@ -33,13 +33,13 @@ function Password() {
   return (
     <div className={style.main} >
     <form className={style.form}>
-        <FaTwitter style={{color:"blue",fontSize:"32px",marginTop:"10px"}}/>
-        <h1 style={{color:"white"}}>Enter your Password</h1>
-         <Input value={Password} placeholder={"password"} type="password" handleOnChange={HandlePassword}/>
+        <FaTwitter className={style.logo} />
+        <h1 >Enter your Password</h1>
+         <Input customStyleInput={style.input} value={Password} placeholder={"password"} type="password" handleOnChange={HandlePassword}/>
        <span  className={style.login}>
        <Button handleClick={CheckData}
          SignUpTxt={"Log in"}/>
-      <h4 style={{color:"white"}}>Don't have an account? <span style={{color:"#2997f1"}}>  <Link to={"/Registration"}>Sign up</Link></span> </h4>
+     <h4 >Don't have an account? <span  className={style.link}> <Link to={"/Registration"}> Sign up</Link></span> </h4>
         </span> 
     </form>
   

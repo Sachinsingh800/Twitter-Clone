@@ -24,8 +24,8 @@ function Registration() {
      
     <div className={style.main} >
         <form className={style.form}>
-            <FaTwitter style={{color:"blue",fontSize:"40px",marginTop:"10px"}}/>
-            <h1 style={{color:"white"}}>Join Twitter today</h1>
+        <FaTwitter className={style.logo} />
+            <h1 >Join Twitter today</h1>
             <Button
               SignUpTxt={"Sign up with Google"}
               Image={Image2}
@@ -37,12 +37,12 @@ function Registration() {
              Image={Image}
              />
             <br/>
-           <span style={{display:"flex" }}><hr/>&nbsp;&nbsp;<span style={{color:"white"}}>or</span>&nbsp;&nbsp;<hr/></span> 
+            <span  className={style.line}><hr/><span className={style.or}>or</span> <hr/></span> 
            <br/>
             <Button handleClick={Toggle}
              SignUpTxt={"Sign up with phone or email"}/>
-          <span className={style.para} >  <h5 style={{color:"white"}}>By signing up, you agree to the <span style={{color:"#2997f1"}}>Terms of Service</span> and <span style={{color:"#2997f1"}}>Privacy Policy</span>,including <span style={{color:"#2997f1"}}>Cookie Use.</span> </h5></span> 
-       <h4 style={{color:"white"}}>Have an account already? <span style={{color:"#2997f1"}}>  <Link to={"/Form"} >Log In</Link> </span></h4>
+          <span className={style.para} > <span >By signing up, you agree to the <span  className={style.termandcondition}>Terms of Service</span> and <span  className={style.termandcondition}>Privacy Policy</span>,including <span  className={style.termandcondition}>Cookie Use.</span> </span></span> 
+          <h4 >Already have an account? <span  className={style.link}> <Link to={"/Login"}> Login</Link></span> </h4>
         </form>
       
     </div>

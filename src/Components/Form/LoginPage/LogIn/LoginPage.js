@@ -26,28 +26,28 @@ function Toggle(){
     
     <div className={style.main} >
         <form className={style.form}>
-            <FaTwitter style={{color:"blue",fontSize:"40px",marginTop:"10px"}}/>
-            <h1 style={{color:"white"}}>Sign in to Twitter</h1>
+            <FaTwitter className={style.logo} />
+            <h1 >Sign in to Twitter</h1>
             <Button
-              SignUpTxt={"Sign up with Google"}
+              SignUpTxt={"Sign in with Google"}
               Image={Image2}/>
           
             <br/>
             <Button
-             SignUpTxt={"Sign up with Apple"}
+             SignUpTxt={"Sign in with Apple"}
              Image={Image}/>
             <br/>
-           <span style={{display:"flex",color:"white" }}><hr/>&nbsp;&nbsp;or&nbsp;&nbsp;<hr/></span> 
+           <span  className={style.line}><hr/><span className={style.or}>or</span> <hr/></span> 
            <br/>
-            <Input placeholder={"Phone, email or username"} /> 
+            <Input   customStyleInput={style.input}  placeholder={"Phone, email or username"} /> 
             <br/>
-           <Button
+           <Button 
              handleClick={Toggle}
              SignUpTxt={"Next"}/>
             <br/>
             <Button
              SignUpTxt={"Forgot password?"}/>
-           <h4 style={{color:"white"}}>Don't have an account? <span style={{color:"#2997f1"}}> <Link to={"/Registration"}> Sign up</Link></span> </h4>
+           <h4 >Don't have an account? <span  className={style.link}> <Link to={"/Registration"}> Sign up</Link></span> </h4>
         </form>
       
     </div>
