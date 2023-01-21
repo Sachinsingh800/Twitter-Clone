@@ -8,7 +8,7 @@ import YearDropdown from "../Year/Year";
 import DayDropdown from "../Day/Day";
 import {isUserLoggedInAtom}  from "../../../../../RecoilState/RecoilAtom"
 import { useSetRecoilState } from "recoil";
-import {useNavigate} from "react-router-dom"
+
 
 import { 
   isValidEmailSyntax ,
@@ -25,14 +25,13 @@ function Account() {
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
-  const navigate = useNavigate()
   const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
 
 
 
   function submitFunction(){
   
-    // window.location.assign("/HomePage")
+   
 
     if(!isValidString(Name))
     {
@@ -82,10 +81,7 @@ const userData = {
 localStorage.setItem('userData',JSON.stringify(userData))
 alert("successfully submited")
     setUserLoginStatus(true)
-   
-    navigate('/HomePage')
-    
-
+    window.location.assign("/HomePage")
 }
 
 
