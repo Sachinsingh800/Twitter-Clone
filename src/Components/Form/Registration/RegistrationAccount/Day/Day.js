@@ -10,7 +10,7 @@ function DayDropdown() {
     <div>
       <select className={style.select} value={selectedDay} onChange={e => setSelectedDay(e.target.value)}>
         <option  value="" disabled>Day</option>
-        {Days.map(Day => <option style={{backgroundColor:"black",color:"white"}} key={Day} value={Day}>{Day}</option>)}
+        {Days.map(Day => <option  key={Day} value={Day}>{Day}</option>)}
       </select>
       {selectedDay && <p>Selected Day: {selectedDay}</p>}
     </div>

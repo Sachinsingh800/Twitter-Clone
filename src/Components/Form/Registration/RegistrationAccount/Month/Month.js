@@ -10,7 +10,7 @@ function MonthDropdown() {
     <div>
       <select className={style.select} value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
         <option value="" disabled>Month</option>
-        {months.map(month => <option style={{backgroundColor:"black",color:"white"}} key={month} value={month}>{month}</option>)}
+        {months.map(month => <option  key={month} value={month}>{month}</option>)}
       </select>
       {selectedMonth && <p>Selected month: {selectedMonth}</p>}
     </div>
