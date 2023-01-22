@@ -1,7 +1,7 @@
 .main{
-   position: fixed;
+   position: sticky;
     width: 24.5rem;
-    height: 38.5rem;
+    height: 100vh;
     display: grid;
     grid-column: 1/2;
     align-items: center;

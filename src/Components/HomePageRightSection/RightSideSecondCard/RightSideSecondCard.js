@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './RightSideSecondCard.module.css'
-import RightSideSecondCardButton from '../../Atom/RightSIdeSecondCardButton/RightSideSecondCardButton'
+import RightSideSecondCardButton from '../../../Atom/RightSIdeSecondCardButton/RightSideSecondCardButton'
 
 
 function RightSideSecondCard() {

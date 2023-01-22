@@ -1,9 +1,10 @@
 import React from 'react'
 import style from './MiddleSection.module.css'
-import MiddleSectionHeader from '../../Components/MiddleSectionHeader/MiddleSectionHeader'
-import MiddleSectionMain from '../../Components/MiddleSectionMain/MiddleSectionMain'
-import MiddleSectionCard from '../../Components/MiddleSectionCard/MiddleSectionCard'
-import MiddleSectionContent from '../../Components/MiddleSectionContent/MiddleSectionContent'
+import MiddleSectionHeader from "../../Components/HomePageMiddleSection/MiddleSectionHeader/MiddleSectionHeader"
+import MiddleSectionMain from '../../Components/HomePageMiddleSection/MiddleSectionMain/MiddleSectionMain'
+import MiddleSectionCard from  "../../Components/HomePageMiddleSection/MiddleSectionCard/MiddleSectionCard"
+import MiddleSectionContent from '../../Components/HomePageMiddleSection/MiddleSectionContent/MiddleSectionContent'
+
 function MiddleSection() {
   return (
     <div className={style.main}>

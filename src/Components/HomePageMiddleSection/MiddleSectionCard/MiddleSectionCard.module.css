@@ -25,3 +25,8 @@
     align-items: center;
    margin-right: 18rem;
 }
+.icon{
+   display: flex;
+   column-gap: 8rem;
+   padding: 0.5rem;
+}

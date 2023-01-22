@@ -2,7 +2,7 @@
     width: 24rem;
     display: grid;
     grid-column: 3/4;
-    height: 38.4rem;
+    height: 100vh;
     overflow-y: scroll;
 }
 .body{

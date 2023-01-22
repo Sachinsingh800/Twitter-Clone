@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './RightSection.module.css'
-import SearchBar from '../../Components/RightSectionComponent/SearchBar/SearchBar'
-import RightSectionFooter from '../../Components/RightSectionFooter/RightSectionFooter'
-import RightComponent from '../../Components/RightComponent/RightComponent'
-import RightSideSecondCard from '../../Components/RightSideSecondCard/RightSideSecondCard'
+import SearchBar from '../../Components/HomePageRightSection/RightSectionComponent/SearchBar/SearchBar'
+import RightSectionFooter from '../../Components/HomePageRightSection/RightSectionFooter/RightSectionFooter'
+import RightComponent from '../../Components/HomePageRightSection/RightComponent/RightComponent'
+import RightSideSecondCard from '../../Components/HomePageRightSection/RightSideSecondCard/RightSideSecondCard'
 
 function RightSection() {
   return (

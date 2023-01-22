@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './MiddleSectionMain.module.css'
-import Image from '../../Assest/Image/Profile.png'
+import Image from '../../../Assest/Image/Profile.png'
 
 function MiddleSectionMain() {
   return (

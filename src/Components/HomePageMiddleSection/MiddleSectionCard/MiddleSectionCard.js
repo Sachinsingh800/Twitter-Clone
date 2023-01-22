@@ -1,7 +1,11 @@
 import React from 'react'
-import Image  from '../../Assest/Image/Modi1.jpg'
+import Image  from "../../../Assest/Image/Modi1.jpg"
 import style from './MiddleSectionCard.module.css'
-import Image2 from '../../Assest/Image/Modi.jpeg'
+import Image2 from  '../../../Assest/Image/Modi.jpeg'
+import {BiMessageRounded} from 'react-icons/bi';
+import {IoMdRepeat} from 'react-icons/io';
+import {BsSuitHeart} from 'react-icons/bs';
+import {BiBarChart} from 'react-icons/bi';
 
 function MiddleSectionCard() {
 
@@ -17,6 +21,12 @@ function MiddleSectionCard() {
       </div>
       <div>
         <img  className={style.Img2} src={Image2} alt="Modi"/>
+      </div>
+      <div className={style.icon}>
+          <BiMessageRounded/>
+          <IoMdRepeat/>
+          <BsSuitHeart/>
+          <BiBarChart/>
       </div>
     </div>
   )

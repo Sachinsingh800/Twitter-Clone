@@ -1,5 +1,5 @@
 import React from 'react'
-import RightSideCard from '../../Atom/RightSideCard/RightSideCard'
+import RightSideCard from '../../../Atom/RightSideCard/RightSideCard'
 import style from './RightComponent.module.css'
 
 
