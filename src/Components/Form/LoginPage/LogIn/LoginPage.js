@@ -17,7 +17,7 @@ function Login() {
 
 
 const storageData =JSON.parse(localStorage.getItem("userData"))
-console.log(storageData)
+
 function Toggle(e){
  e.preventDefault()
 
