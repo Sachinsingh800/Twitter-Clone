@@ -13,8 +13,34 @@ import Password from "../Password/Password"
 
 function Login() {
   const [isToggle, setIsToggle]=useState(false)
-function Toggle(){
-  setIsToggle(true)
+  const [inputData , setInputData] = useState("")
+
+
+const storageData =JSON.parse(localStorage.getItem("userData"))
+console.log(storageData)
+function Toggle(e){
+ e.preventDefault()
+
+   if(inputData == ""){
+    alert("please fill the Input Field!!!!")
+  
+   
+    }else{
+     if (inputData == storageData.Email){
+      setIsToggle(true)
+     }
+     else{
+    alert("invalid")
+     }
+      
+     // alert("fill the correct data")
+    }
+  }
+
+
+function HandleInputData(Data){
+  setInputData(Data)
+  
 }
   
   return (
@@ -39,7 +65,7 @@ function Toggle(){
             <br/>
            <span  className={style.line}><hr/><span className={style.or}>or</span> <hr/></span> 
            <br/>
-            <Input   customStyleInput={style.input}  placeholder={"Phone, email or username"} /> 
+            <Input  handleOnChange={HandleInputData} customStyleInput={style.input}  placeholder={"Phone, email or username"} /> 
             <br/>
            <Button 
              handleClick={Toggle}

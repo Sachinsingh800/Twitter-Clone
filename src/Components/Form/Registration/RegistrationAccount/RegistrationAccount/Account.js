@@ -29,8 +29,8 @@ function Account() {
 
 
 
-  function submitFunction(){
-  
+  function submitFunction(e){
+  e.preventDefault()
    
 
     if(!isValidString(Name))
@@ -77,11 +77,14 @@ const userData = {
        Password,
     // dateOfBirth : `${date + '/' + month + '/' + year}`
 }
-
+  
 localStorage.setItem('userData',JSON.stringify(userData))
+window.location.assign("/HomePage")
 alert("successfully submited")
+
     setUserLoginStatus(true)
-    window.location.assign("/HomePage")
+  
+   
 }
 
 
