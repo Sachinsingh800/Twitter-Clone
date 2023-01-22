@@ -18,7 +18,7 @@ function YearDropdown() {
         <option value="" disabled>Year</option>
         {Years.map(Year => <option  key={Year} value={Year}>{Year}</option>)}
       </select>
-      {selectedYear && <p>Selected Year: {selectedYear}</p>}
+      {/* {selectedYear && <p>Selected Year: {selectedYear}</p>} */}
     </div>
   );
 }

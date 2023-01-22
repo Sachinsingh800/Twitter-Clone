@@ -12,7 +12,7 @@ function MonthDropdown() {
         <option value="" disabled>Month</option>
         {months.map(month => <option  key={month} value={month}>{month}</option>)}
       </select>
-      {selectedMonth && <p>Selected month: {selectedMonth}</p>}
+      {/* {selectedMonth && <p>Selected month: {selectedMonth}</p>} */}
     </div>
   );
 }

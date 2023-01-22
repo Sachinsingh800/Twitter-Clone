@@ -12,7 +12,7 @@ function DayDropdown() {
         <option  value="" disabled>Day</option>
         {Days.map(Day => <option  key={Day} value={Day}>{Day}</option>)}
       </select>
-      {selectedDay && <p>Selected Day: {selectedDay}</p>}
+      {/* {selectedDay && <p>Selected Day: {selectedDay}</p>} */}
     </div>
   );
 }
