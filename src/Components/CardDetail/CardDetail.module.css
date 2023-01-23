@@ -1,5 +1,7 @@
 .heading{
     display: flex;
+    /* justify-content: center; */
+    align-items: center;
 }
 .image{
     height: 25rem;
@@ -12,4 +14,10 @@
 .bottomSection{
     display: flex;
     justify-content: space-evenly
+}
+.img{
+    height: 50px;
+    width: 50px;
+    padding: 0rem 1rem;
+    /* margin-top: 0.8rem; */
 }

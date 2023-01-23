@@ -6,6 +6,7 @@ import style from './CardDetail.module.css'
 import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
 import LikeButton from '../../Atom/LikeButton/LikeButton'
 import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
+import Image from '../../Assest/Image/Profile.png'
 
 export default function CardDetail({profileData}) {
 
@@ -35,6 +36,7 @@ export default function CardDetail({profileData}) {
                     // onClick = {handleOnClickProfile}
                 >
                     <div className={style.heading}>
+                           <img className={style.img} src={Image} alt="Profile"/>
                            <h2>{name}</h2>
                             <h5>{handlerName}</h5>
                      </div>
@@ -49,8 +51,9 @@ export default function CardDetail({profileData}) {
                 
                  <div className={style.bottomSection}>
                     <CommentDialogBox/>
-                    <LikeButton/>
                     <RetweetButton/>
+                    <LikeButton/>
+                 
                  </div>
                 {/* <strong>
                     {id}
