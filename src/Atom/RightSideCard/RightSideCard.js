@@ -3,14 +3,50 @@ import style from './RightSideCard.module.css'
 import { BsThreeDots} from 'react-icons/bs'
 
 function RightSideCard() {
+  const trend =[
+    {
+    name:"Sport-Trending",
+    trends:"#AlNassr",
+    Link:"Trending with #PSGRCSA",
+    option:  <BsThreeDots />,
+  },
+    {
+    name:"Sport-Trending",
+    trends:"#AlNassr",
+    Link:"Trending with #PSGRCSA",
+    option:  <BsThreeDots />,
+  },
+    {
+    name:"Sport-Trending",
+    trends:"#AlNassr",
+    Link:"Trending with #PSGRCSA",
+    option:  <BsThreeDots />,
+  },
+    {
+    name:"Sport-Trending",
+    trends:"#AlNassr",
+    Link:"Trending with #PSGRCSA",
+    option:  <BsThreeDots />,
+  },
+
+]
   return (
-    <div className={style.main}>
-        <div>
-        <div className={style.trend}>Sport - Trending</div>  
-       <div className={style.hastag}>#AINassr</div> 
-        <div className={style.trend}>Trending with <span style={{color:"blue"}}>#PSGRCSA</span></div> 
+    <div>
+
+      {
+        trend.map((trend) =>
+        <>
+        <div  className={style.main}>
+
+        <div>{trend.name}</div>
+        <div>{trend.trends}</div>
+        <div>{trend.Link}</div>
+       <div>{trend.option}</div>
         </div>
-          <div className={style.icon}>< BsThreeDots/></div>
+        </>
+        )
+      }
+   
     </div>
   )
 }

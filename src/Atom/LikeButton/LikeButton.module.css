@@ -1,0 +1,6 @@
+.button{
+    display: flex;
+   row-gap: 1rem;
+    background-color: transparent;
+    border: none;
+}

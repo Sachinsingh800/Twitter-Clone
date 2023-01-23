@@ -1,0 +1,30 @@
+.image{
+    height:25rem;
+    width: 30rem;
+    border-radius: 15px;
+
+}
+.heading{
+    display: flex;
+   border: 1px red solid;
+}
+.bottomContain{
+    display: flex;
+    justify-content: space-evenly;
+}
+.link{
+    display: flex;
+    justify-content: space-evenly;
+}
+.middleContain{
+   border: 1px red solid;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 0rem 3rem;
+}
+.main{
+    width: 35.6rem;
+    border: 2px blue solid;
+ 
+}

@@ -4,6 +4,8 @@
     width: 36rem;
     height: 100vh;
     overflow-y: scroll;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 .header{
     height: 7.4rem;

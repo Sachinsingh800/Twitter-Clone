@@ -1,16 +1,8 @@
 .main{
-   padding: none;
    display: flex;
-   align-items: center;
+   padding: 1rem;
+   flex-direction: column;
+   row-gap: 0.2rem;
    font-family: Arial, Helvetica, sans-serif;
-}
-.trend{
-    font-size: small;
-}
-.hastag{
-    font-weight: 700;
-}
-.icon{
-     margin-left:7rem;
-     font-size: larger;
+   justify-content: space-around;
 }

@@ -7,7 +7,6 @@ import MonthDropdown from "../Month/Month";
 import YearDropdown from "../Year/Year";
 import DayDropdown from "../Day/Day";
 import {isUserLoggedInAtom}  from "../../../../../RecoilState/RecoilAtom"
-// import { useSetRecoilState } from "recoil";
 import { useRecoilState } from "recoil";
 
 import { 
@@ -26,15 +25,11 @@ function Account() {
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
-  // const setUserLoginStatus = useRecoilState(isUserLoggedInAtom)
   const [userLoginStatus, setUserLoginStatus] = useRecoilState(isUserLoggedInAtom)
-  // console.log(userLoginStatus)
+
 
   function submitFunction(e){
-  e.preventDefault()
-   
-
- 
+    e.preventDefault()
 
     if(!isValidString(Name))
     {
@@ -80,7 +75,8 @@ const userData = {
     ...(Email && {Email}),
        Password,
     ...(userLoginStatus && {userLoginStatus})
-      
+ 
+       
     // dateOfBirth : `${date + '/' + month + '/' + year}`
 }
   
@@ -89,7 +85,7 @@ localStorage.setItem('userData',JSON.stringify(userData))
     alert("successfully submited")
 
     window.location.assign("/HomePage")
-    
+   
    
 }
 
@@ -165,7 +161,7 @@ localStorage.setItem('userData',JSON.stringify(userData))
           </p>
           <div className={style.date}>
        <span><MonthDropdown /></span> 
-        <span><DayDropdown/></span>
+        <span><DayDropdown /></span>
         <span><YearDropdown /></span>
         </div>
         </div>

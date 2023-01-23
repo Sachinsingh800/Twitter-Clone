@@ -6,8 +6,16 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import style from './Userbutton.module.css'
 import Image from '../../Assest/Image/Profile.png'
 import { BsThreeDots} from 'react-icons/bs'
+import {isUserLoggedInAtom}  from "../../../src/RecoilState/RecoilAtom"
+import { useRecoilState } from "recoil";
 
 export default function PopoverPopupState() {
+  const [userLoginStatus, setUserLoginStatus] = useRecoilState(isUserLoggedInAtom)
+
+  function Logout(){
+    setUserLoginStatus(false)
+    window.location.assign("/HomePage")
+  }
   return (
     <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
@@ -41,7 +49,7 @@ export default function PopoverPopupState() {
             <Typography sx={{ p: 2 }}>
                 <ul>
                 <li>Add an existing account</li>
-                <li>Log out @sachin432</li>
+                <button onClick={Logout}>Log out @sachin432</button>
                </ul>
             </Typography>
           </Popover>
