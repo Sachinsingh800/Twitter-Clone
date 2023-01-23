@@ -2,7 +2,7 @@ import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import style  from './CommentDialogBox.module.css'
-import Image from '../../../Assest/Image/Profile.png'
+import Image from '../../Assest/Image/Profile.png'
 import { useState } from 'react';
 import {BiMessageRounded} from 'react-icons/bi';
 

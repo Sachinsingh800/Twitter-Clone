@@ -1,14 +1,5 @@
-import React from 'react';
-import style from './MiddleSectionContent.module.css'
-import  CommentDialogBox from "../../HomeProfileComment/CommentDialogBox/CommentDialogBox"
-import {IoMdRepeat} from 'react-icons/io';
-import LikeButton from '../../../Atom/LikeButton/LikeButton';
-import {BiBarChart} from 'react-icons/bi';
 
-
-function MiddleSectionContent() {
-
-    const tweetPosts = [
+    export const tweetPosts = [
       {
           name  : 'The White House',
           handlerName : '@The White House' ,
@@ -209,46 +200,3 @@ function MiddleSectionContent() {
           ]
       }
   ]
-  return (
-    <div className={style.main}>
-      {
-        tweetPosts.map((card ,index)=>
-        <div  className={style.main} key={index}>
-
-        <div className={style.heading}>
-        <h2>{card.name}</h2>
-        <h6>{card.handlerName}</h6>
-        </div>
-       
-       <div className={style.middleContain}> 
-       <h4>{card.organization}</h4>
-        <p>{card.tweetText}</p>
-        <img className={style.image} src={card.tweetPic} alt="Contain" />
-       </div>
-
-       <div className={style.bottomContain}>
-       <div> < CommentDialogBox/></div>
-        <div><LikeButton/></div>
-        <div>{card.likesCount}</div>
-        <div>{card.viewsCount}</div>
-       </div>
-
-    {/* <div className={style.link}>
-    <div>{card.refLink}</div>
-        <div>{card.hastags}</div>
-        <div>{card.followers}</div>
-        <div>{card.followings}</div>
-        <div>{card.joinedDate}</div>
-
-    </div> */}
-       
-
-
-        </div>
-        )
-      }
-    </div>
-  )
-}
-
-export default MiddleSectionContent

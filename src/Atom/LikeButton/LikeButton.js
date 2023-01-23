@@ -10,7 +10,7 @@ function LikeButton() {
     }
   return (
     <div>
-      <button className={style.button}  onClick={Counter}><BsSuitHeart/>{count}</button>
+      <button className={style.button}  onClick={Counter}><span className={style.icon}><BsSuitHeart/></span>{count}</button>
     </div>
   )
 }

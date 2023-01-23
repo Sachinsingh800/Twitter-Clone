@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaTwitter } from "react-icons/fa";
 import Button from "../../../../../Atom/Button/Button"
 import style from "./Account.module.css";
@@ -58,37 +58,35 @@ function Account() {
            return
     }
 
-    setUserLoginStatus(true)
-   
-      
-// if(!isValidString(password)){
-//     alert('please set your account password !!')
-//     return
-// }
-// if(!isValidString(date) || !isValidString(month) || !isValidString(year)){
-//     alert('Invalid Date !!')
-//     return
-// }
-const userData = {
-        Name ,
-    ...(Phone && {Phone}),
-    ...(Email && {Email}),
-       Password,
-    ...(userLoginStatus && {userLoginStatus})
- 
-       
-    // dateOfBirth : `${date + '/' + month + '/' + year}`
-}
-  
-localStorage.setItem('userData',JSON.stringify(userData))
-
     alert("successfully submited")
-
-    window.location.assign("/HomePage")
-   
-   
+    setUserLoginStatus(true)
+    window.location.assign("/HomePage")   
 }
 
+
+useEffect(()=>{
+
+  // if(!isValidString(password)){
+  //     alert('please set your account password !!')
+  //     return
+  // }
+  // if(!isValidString(date) || !isValidString(month) || !isValidString(year)){
+  //     alert('Invalid Date !!')
+  //     return
+  // }
+  const userData = {
+          Name ,
+      ...(Phone && {Phone}),
+      ...(Email && {Email}),
+         Password,
+      // ...(userLoginStatus && {userLoginStatus})
+      userLoginStatus
+         
+      // dateOfBirth : `${date + '/' + month + '/' + year}`
+  }
+  console.log(userData)
+  localStorage.setItem('userData',JSON.stringify(userData))
+},[userLoginStatus])
 
 
   function emailLogin() {
