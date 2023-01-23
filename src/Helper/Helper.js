@@ -14,3 +14,6 @@ exports.isValidEmailSyntax = (email) => {
 exports.isOnlyLetters = (str) => {
     return /^[A-Za-z\s]+$/.test(str)
 }
+exports.isValidPassword = function (Password) {
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/.test(Password)
+}

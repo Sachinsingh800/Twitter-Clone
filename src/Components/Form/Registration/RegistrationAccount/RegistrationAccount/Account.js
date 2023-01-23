@@ -7,14 +7,15 @@ import MonthDropdown from "../Month/Month";
 import YearDropdown from "../Year/Year";
 import DayDropdown from "../Day/Day";
 import {isUserLoggedInAtom}  from "../../../../../RecoilState/RecoilAtom"
-import { useSetRecoilState } from "recoil";
-
+// import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 
 import { 
   isValidEmailSyntax ,
   isValidMobile,
   isOnlyLetters,
-  isValidString
+  isValidString,
+  isValidPassword ,
 } from '../../../../../../src/Helper/Helper'
 
 
@@ -25,13 +26,15 @@ function Account() {
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
-  const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
-
-
+  // const setUserLoginStatus = useRecoilState(isUserLoggedInAtom)
+  const [userLoginStatus, setUserLoginStatus] = useRecoilState(isUserLoggedInAtom)
+  // console.log(userLoginStatus)
 
   function submitFunction(e){
   e.preventDefault()
    
+
+ 
 
     if(!isValidString(Name))
     {
@@ -54,13 +57,14 @@ function Account() {
       }  
   }
   
-    if(!isValidString(Password))
+    if(!isValidPassword(Password))
     {
-          alert('please set your account password !!')
+          alert('add strong Password !!')
            return
     }
 
-  
+    setUserLoginStatus(true)
+   
       
 // if(!isValidString(password)){
 //     alert('please set your account password !!')
@@ -75,15 +79,17 @@ const userData = {
     ...(Phone && {Phone}),
     ...(Email && {Email}),
        Password,
+    ...(userLoginStatus && {userLoginStatus})
+      
     // dateOfBirth : `${date + '/' + month + '/' + year}`
 }
   
 localStorage.setItem('userData',JSON.stringify(userData))
-window.location.assign("/HomePage")
-alert("successfully submited")
 
-    setUserLoginStatus(true)
-  
+    alert("successfully submited")
+
+    window.location.assign("/HomePage")
+    
    
 }
 

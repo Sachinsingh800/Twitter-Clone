@@ -21,12 +21,12 @@ const storageData =JSON.parse(localStorage.getItem("userData"))
 function Toggle(e){
  e.preventDefault()
 
-   if(inputData == ""){
+   if(inputData === ""){
     alert("please fill the Input Field!!!!")
   
    
     }else{
-     if (inputData == storageData.Email){
+     if (inputData === storageData.Email || inputData === storageData.Phone){
       setIsToggle(true)
      }
      else{

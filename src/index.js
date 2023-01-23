@@ -11,6 +11,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { RecoilRoot } from 'recoil';
 
 
 
@@ -40,9 +41,11 @@ const router = createBrowserRouter([
 ]);
 
 root.render(
+  <RecoilRoot>
   <React.StrictMode>
    <RouterProvider router={router} />
   </React.StrictMode>
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function

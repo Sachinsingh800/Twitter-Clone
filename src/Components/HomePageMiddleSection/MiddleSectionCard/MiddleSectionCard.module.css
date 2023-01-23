@@ -25,11 +25,7 @@
     align-items: center;
    margin-right: 18rem;
 }
-.icon{
-   display: flex;
-   column-gap: 5rem;
-   padding: 0.5rem;
-}
+
 .button span{
       margin-left: 1rem;
 }
