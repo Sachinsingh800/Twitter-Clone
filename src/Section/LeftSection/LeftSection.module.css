@@ -46,3 +46,7 @@
     font-size: large;
     margin-left: 10px;
 }
+.optionbtn{
+    background-color: transparent;
+    border: none;
+}

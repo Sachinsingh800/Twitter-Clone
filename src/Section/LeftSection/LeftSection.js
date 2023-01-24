@@ -15,7 +15,7 @@ import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox';
 
 
 
-function LeftSection({Handleclicked}) {
+function LeftSection({toggled}) {
 
     const Navoption=[
         {icon:<ImHome2/>, Option: 'Home', },
@@ -24,7 +24,7 @@ function LeftSection({Handleclicked}) {
        { icon:<GoMail/>, Option: 'Messages' , },
        { icon:<BsBookmark/>, Option: 'BookMarks' ,},
        { icon:<RiFileList2Line/>,  Option: 'List' ,},
-       { icon:<CgProfile/>,   Option: <button onClick={Handleclicked}>Profile</button> ,},
+       { icon:<CgProfile/>,   Option: <button  className={style.optionbtn} onClick={toggled}>Profile</button> ,},
          {icon:<CiCircleMore/>,   Option: 'More' ,},
      ]
  
