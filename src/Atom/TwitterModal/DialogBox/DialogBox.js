@@ -35,9 +35,6 @@ export default function DialogBox() {
   }
 
 
-
-
-
   return (
     <div>
       <button className={style.button1}  onClick={handleClickOpen}>
