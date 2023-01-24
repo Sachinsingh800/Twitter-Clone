@@ -7,27 +7,16 @@ import { useState } from 'react';
 import { BsImage } from 'react-icons/bs'
 import ImageUpload from '../../ImageUpload/ImageUpload';
 import { tweetPosts } from '../../../Const/Const'; 
-import { useRecoilState } from "recoil";
-import { isTweetPost } from "../../../RecoilState/RecoilAtom";
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function DialogBox() {
-  const [loginStatus,setLoginStatus] = useRecoilState(isTweetPost);
-  const[forTrue,setForTrue]=useState(0)
-
-
   const [data, setData] = useState("")
   const [open, setOpen] = React.useState(false);
   const [tweetData,setTweetData] = useState(tweetPosts)
-  // const [newTweet,setNewTweet] = useState({})
 
- 
-
-
-// const fileURL = URL.createObjectURL(input);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,27 +27,14 @@ export default function DialogBox() {
   };
 
   function handleSummit(){
-    const  newTweets ={
-      name:data ,
-      // handlerName:"" ,
-      // tweetText :"",
-      // tweetPic:"" ,
-      // followers :"",
-      // followings:"" ,
-      // organization:"",
-      // id
-  } 
-    tweetData.unshift(...tweetData, newTweets);
-    setForTrue(forTrue+1)
-    setLoginStatus(loginStatus+1);
 
+    tweetPosts.unshift(data)
+    setTweetData({...tweetData,data})
+    alert("tweeet submitted")
+    console.log(tweetData)
   }
 
 
-//  console.log(unShiftData)
-// const TweetPost={
-//   Text:data,
-// }
 
 
 
