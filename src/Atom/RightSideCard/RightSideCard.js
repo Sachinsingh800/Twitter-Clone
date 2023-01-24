@@ -1,65 +1,67 @@
 import React, { useState } from 'react'
 import style from './RightSideCard.module.css'
-import { BsThreeDots} from 'react-icons/bs'
 import TrendOption from '../TrendOption/TrendOption'
 
 
 function RightSideCard() {
-  const [isNotInterested, setIsNotIntrested] =useState(false)
 
-  const deleteItem =(ind) => {
-    const updateditems = trend.filter((trend, id) =>{
-         
-    })
-    setIsNotIntrested(updateditems)
+  const [data ,setData] =useState(
 
-}
+     [
+      {
+        id:1,
+      name:"Sport-Trending1",
+      trends:"#AlNassr",
+      Link:"Trending with #PSGRCSA",
+      isNotInterested:true,
+    },
+      {
+        id:2,
+      name:"Sport-Trending2",
+      trends:"#AlNassr",
+      Link:"Trending with #PSGRCSA",
+      isNotInterested:false,
+    },
+      {
+        id:3,
+      name:"Sport-Trending3",
+      trends:"#AlNassr",
+      Link:"Trending with #PSGRCSA",
+      isNotInterested:false,
+    },
+      {
+        id:4,
+      name:"Sport-Trending4",
+      trends:"#AlNassr",
+      Link:"Trending with #PSGRCSA",
+      isNotInterested:false,
+    },
+  
+  ]
+  )
+   console.log(data)
 
-  const trend =[
-    {
-    name:"Sport-Trending",
-    trends:"#AlNassr",
-    Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={deleteItem}/>,
-    isNotInterested:true,
-  },
-    {
-    name:"Sport-Trending",
-    trends:"#AlNassr",
-    Link:"Trending with #PSGRCSA",
-    option: <TrendOption handleClicked={deleteItem}/>,
-    isNotInterested:false,
-  },
-    {
-    name:"Sport-Trending",
-    trends:"#AlNassr",
-    Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={deleteItem }/>,
-    isNotInterested:false,
-  },
-    {
-    name:"Sport-Trending",
-    trends:"#AlNassr",
-    Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={deleteItem }/>,
-    isNotInterested:false,
-  },
 
-]
+   const removeData=(id)=>{
+    setData((current)=>current.filter((trend)=>trend.id !==id))
+  }
+
+
+
   return (
     <div className={style.container}>
        <h2>what's happening.. ??</h2>
       {
-        trend.map((trend, id) =>
+        data.map((elem, id) =>
         <> 
         <div key={id}  className={style.main}>
-          <div>
-          <div>{trend.name}</div>
-                        <div>{trend.trends}</div>
-                        <div>{trend.Link}</div>    
+          <div>     
+                          <div>{elem.name}</div>
+                        <div>{elem.trends}</div>
+                        <div>{elem.Link}</div>    
           </div>
-                        
-                        <div className={style.option}>{trend.option}</div>       
+                        <div><TrendOption handleClicked={()=>removeData(elem.id)} /> </div>
+                        <div className={style.option}>{elem.option}</div>       
         </div>
 
         

@@ -15,17 +15,17 @@ import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox';
 
 
 
-function LeftSection() {
+function LeftSection({Handleclicked}) {
 
     const Navoption=[
-        {icon:<ImHome2/>, Option: 'Home', path : '/'},
-       {icon:<BiHash/>,  Option: 'Explore' ,path:'/Login' },
-       {icon:<RiNotification2Line/>,  Option: 'Notification' ,path:'/About' },
-       { icon:<GoMail/>, Option: 'Messages' ,path:'/Registration' },
-       { icon:<BsBookmark/>, Option: 'BookMarks' ,path:'/Registration' },
-       { icon:<RiFileList2Line/>,  Option: 'List' ,path:'/Registration' },
-       { icon:<CgProfile/>,   Option: "Profile" , path:'/Registration' },
-         {icon:<CiCircleMore/>,   Option: 'More' ,path:'/Registration' },
+        {icon:<ImHome2/>, Option: 'Home', },
+       {icon:<BiHash/>,  Option: 'Explore' , },
+       {icon:<RiNotification2Line/>,  Option: 'Notification' , },
+       { icon:<GoMail/>, Option: 'Messages' , },
+       { icon:<BsBookmark/>, Option: 'BookMarks' ,},
+       { icon:<RiFileList2Line/>,  Option: 'List' ,},
+       { icon:<CgProfile/>,   Option: <button onClick={Handleclicked}>Profile</button> ,},
+         {icon:<CiCircleMore/>,   Option: 'More' ,},
      ]
  
   return (

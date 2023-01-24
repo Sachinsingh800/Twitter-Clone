@@ -1,5 +1,4 @@
 
-
 import { tweetPosts } from '../../Const/Const'
 import CardDetail from '../CardDetail/CardDetail';
 

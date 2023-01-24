@@ -7,7 +7,12 @@ export const isUserLoggedInAtom  = atom({
     default : false
 })
 
+export const isTweetPost = atom({
+    key: "isPost",
+    default: 0,
+  });
 
+  
 // export default function ProfilePage () {
 //     const profile = useRecoilValue(profileDataAtom)
 //     console.log({profile})

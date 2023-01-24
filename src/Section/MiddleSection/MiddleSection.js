@@ -8,7 +8,9 @@ import LeftSection from '../LeftSection/LeftSection'
 
 
 function MiddleSection() {
-
+  function toggled(){
+alert("cleckdkskjklsjkj")
+  }
   return (
     <div className={style.main}>
        <div className={style.header}><MiddleSectionHeader /></div>  

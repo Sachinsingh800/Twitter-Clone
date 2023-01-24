@@ -6,15 +6,24 @@ import Image from '../../../Assest/Image/Profile.png'
 import { useState } from 'react';
 import { BsImage } from 'react-icons/bs'
 import ImageUpload from '../../ImageUpload/ImageUpload';
+import { tweetPosts } from '../../../Const/Const'; 
+import { useRecoilState } from "recoil";
+import { isTweetPost } from "../../../RecoilState/RecoilAtom";
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function DialogBox() {
+  const [loginStatus,setLoginStatus] = useRecoilState(isTweetPost);
+  const[forTrue,setForTrue]=useState(0)
+
+
   const [data, setData] = useState("")
   const [open, setOpen] = React.useState(false);
-  const [input ,setInput] = useState()
+  const [tweetData,setTweetData] = useState(tweetPosts)
+  // const [newTweet,setNewTweet] = useState({})
+
  
 
 
@@ -29,10 +38,28 @@ export default function DialogBox() {
   };
 
   function handleSummit(){
-   setData(data)
-   setData('')
- 
+    const  newTweets ={
+      name:data ,
+      // handlerName:"" ,
+      // tweetText :"",
+      // tweetPic:"" ,
+      // followers :"",
+      // followings:"" ,
+      // organization:"",
+      // id
+  } 
+    tweetData.unshift(...tweetData, newTweets);
+    setForTrue(forTrue+1)
+    setLoginStatus(loginStatus+1);
+
   }
+
+
+//  console.log(unShiftData)
+// const TweetPost={
+//   Text:data,
+// }
+
 
 
   return (
@@ -47,12 +74,10 @@ export default function DialogBox() {
       <div className={style.dialogBox}>
        <input className={style.input}  onChange={(e)=> setData(e.target.value)} value={data} placeholder="What's happening?"></input>
       </div>
-      <img   src={input} />
       <div>
       <ImageUpload cardName="Input Image" />,
-        {/* <input type="file" onChange={(e)=>setInput(e.target.files[0])}  accept="image/png , image/jpeg"/> */}
       </div>
-      <button onClick={handleSummit}   className={style.tweet}>Tweet</button>
+      <button onClick={handleSummit}   className={style.tweet} >Tweet</button>
        </Dialog>
       
     </div>
