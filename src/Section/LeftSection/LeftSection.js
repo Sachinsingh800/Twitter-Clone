@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './LeftSection.module.css'
 import {FaTwitter} from 'react-icons/fa';
 import {ImHome2} from 'react-icons/im';
@@ -12,9 +12,11 @@ import {CiCircleMore} from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import PopoverPopupState from '../../Atom/Userbutton/Userbutton'
 import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox';
-// import TwitterModal from '../../Atom/TwitterModal/TwitterModal';
+
+
 
 function LeftSection() {
+
     const Navoption=[
         {icon:<ImHome2/>, Option: 'Home', path : '/'},
        {icon:<BiHash/>,  Option: 'Explore' ,path:'/Login' },
@@ -22,7 +24,7 @@ function LeftSection() {
        { icon:<GoMail/>, Option: 'Messages' ,path:'/Registration' },
        { icon:<BsBookmark/>, Option: 'BookMarks' ,path:'/Registration' },
        { icon:<RiFileList2Line/>,  Option: 'List' ,path:'/Registration' },
-       { icon:<CgProfile/>,   Option: 'Profile' ,path:'/Registration' },
+       { icon:<CgProfile/>,   Option: "Profile" , path:'/Registration' },
          {icon:<CiCircleMore/>,   Option: 'More' ,path:'/Registration' },
      ]
  

@@ -4,6 +4,7 @@
     grid-column: 3/4;
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .body{
     margin-right: 2.5rem;

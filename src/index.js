@@ -7,11 +7,14 @@ import Registration from './Components/Form/Registration/Registration/Registrati
 import Login from './Components/Form/LoginPage/LogIn/LoginPage';
 import HomePage from './Components/HomePage/HomePage';
 
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
+
 
 
 
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/HomePage",
     element: <HomePage />,
+  },
+  {
+    path: "/ProfilePage",
+    element: <ProfilePage/>,
   },
  
 

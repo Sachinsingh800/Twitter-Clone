@@ -6,8 +6,13 @@ import TrendOption from '../TrendOption/TrendOption'
 
 function RightSideCard() {
   const [isNotInterested, setIsNotIntrested] =useState(false)
-function handleClicked(){
-  setIsNotIntrested(true)
+
+  const deleteItem =(ind) => {
+    const updateditems = trend.filter((trend, id) =>{
+         
+    })
+    setIsNotIntrested(updateditems)
+
 }
 
   const trend =[
@@ -15,28 +20,28 @@ function handleClicked(){
     name:"Sport-Trending",
     trends:"#AlNassr",
     Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={handleClicked}/>,
+    option:  <TrendOption handleClicked={deleteItem}/>,
     isNotInterested:true,
   },
     {
     name:"Sport-Trending",
     trends:"#AlNassr",
     Link:"Trending with #PSGRCSA",
-    option: <TrendOption handleClicked={handleClicked}/>,
+    option: <TrendOption handleClicked={deleteItem}/>,
     isNotInterested:false,
   },
     {
     name:"Sport-Trending",
     trends:"#AlNassr",
     Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={handleClicked}/>,
+    option:  <TrendOption handleClicked={deleteItem }/>,
     isNotInterested:false,
   },
     {
     name:"Sport-Trending",
     trends:"#AlNassr",
     Link:"Trending with #PSGRCSA",
-    option:  <TrendOption handleClicked={handleClicked}/>,
+    option:  <TrendOption handleClicked={deleteItem }/>,
     isNotInterested:false,
   },
 
@@ -45,9 +50,9 @@ function handleClicked(){
     <div className={style.container}>
        <h2>what's happening.. ??</h2>
       {
-        trend.map((trend) =>
+        trend.map((trend, id) =>
         <> 
-        <div  className={style.main}>
+        <div key={id}  className={style.main}>
           <div>
           <div>{trend.name}</div>
                         <div>{trend.trends}</div>
