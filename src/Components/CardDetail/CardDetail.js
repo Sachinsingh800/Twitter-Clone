@@ -7,6 +7,8 @@ import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
 import LikeButton from '../../Atom/LikeButton/LikeButton'
 import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
 import Image from '../../Assest/Image/Profile.png'
+import { Link } from 'react-router-dom'
+
 
 export default function CardDetail({profileData}) {
 
@@ -18,6 +20,7 @@ export default function CardDetail({profileData}) {
         handlerName ,
         tweetText ,
         tweetPic ,
+        tweets,
         followers ,
         followings ,
         organization,
@@ -36,17 +39,22 @@ export default function CardDetail({profileData}) {
                     // onClick = {handleOnClickProfile}
                 >
                     <div className={style.heading}>
-                           <img className={style.img} src={Image} alt="Profile"/>
+                       <Link to={"/ProfilePage"}> <img className={style.img} src={Image} alt="Profile"/></Link>   
                            <h2>{name}</h2>
                             <h5>{handlerName}</h5>
                      </div>
                  
                  <div className={style.ImageWrapper}>
-                 <p>{tweetText}</p>
-                <img
-                    src = {tweetPic}
-                    className={style.image}
-                />
+                     {tweets.map((item)=>
+                     <>
+                     <p>{item.tweetText}</p>
+                     <img
+                         src = {item.tweetPic}
+                         className={style.image}
+                     />
+                     </>
+                     )}
+               
                  </div>
                 
                  <div className={style.bottomSection}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './RightSideCard.module.css'
 import TrendOption from '../TrendOption/TrendOption'
 
@@ -9,28 +9,28 @@ function RightSideCard() {
 
      [
       {
-        id:1,
+        id:0,
       name:"Sport-Trending1",
       trends:"#AlNassr",
       Link:"Trending with #PSGRCSA",
       isNotInterested:true,
     },
       {
-        id:2,
+        id:1,
       name:"Sport-Trending2",
       trends:"#AlNassr",
       Link:"Trending with #PSGRCSA",
       isNotInterested:false,
     },
       {
-        id:3,
+        id:2,
       name:"Sport-Trending3",
       trends:"#AlNassr",
       Link:"Trending with #PSGRCSA",
       isNotInterested:false,
     },
       {
-        id:4,
+        id:3,
       name:"Sport-Trending4",
       trends:"#AlNassr",
       Link:"Trending with #PSGRCSA",
@@ -39,13 +39,26 @@ function RightSideCard() {
   
   ]
   )
-   console.log(data)
+  //  console.log(data)
 
 
    const removeData=(id)=>{
-    setData((current)=>current.filter((trend)=>trend.id !==id))
+
+    setData((data)=>data.filter((trend)=>trend.id !==id))
+
+    localStorage.setItem('trendData', JSON.stringify(data))
+
   }
 
+ useEffect(()=>{
+  if (localStorage.getItem('trendData')) {
+     const trendsdata=(localStorage.getItem('trendData'))
+     const newData = JSON.parse(trendsdata)
+     setData(newData)
+  }else{
+    localStorage.setItem('trendData', JSON.stringify(data))
+  }
+ },[])
 
 
   return (

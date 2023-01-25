@@ -6,7 +6,7 @@ import Image from '../../../Assest/Image/Profile.png'
 import { useState } from 'react';
 import { BsImage } from 'react-icons/bs'
 import ImageUpload from '../../ImageUpload/ImageUpload';
-import { tweetPosts } from '../../../Const/Const'; 
+import {   postData } from '../../../Const/Const'; 
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -15,7 +15,7 @@ const Transition = React.forwardRef(function Transition(props, ref ) {
 export default function DialogBox() {
   const [data, setData] = useState("")
   const [open, setOpen] = React.useState(false);
-  const [tweetData,setTweetData] = useState(tweetPosts)
+  const [tweetData,setTweetData] = useState( postData )
 
 
   const handleClickOpen = () => {
@@ -28,7 +28,7 @@ export default function DialogBox() {
 
   function handleSummit(){
 
-    tweetPosts.unshift(data)
+    postData .unshift(data)
     setTweetData({...tweetData,data})
     alert("tweeet submitted")
     console.log(tweetData)
