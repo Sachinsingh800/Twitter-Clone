@@ -45,7 +45,6 @@ function RightSideCard() {
    const removeData=(id)=>{
 
     setData((data)=>data.filter((trend)=>trend.id !==id))
-
     localStorage.setItem("trendData",JSON.stringify(data)) 
   }
 
@@ -53,7 +52,7 @@ useEffect(()=>{
  const TrendData=JSON.parse(localStorage.getItem('trendData'))
 
  if(TrendData === null || TrendData.length === 0){
-   setNewData(data);
+   setNewData([]);
   }else{
     setNewData(TrendData)
   }
