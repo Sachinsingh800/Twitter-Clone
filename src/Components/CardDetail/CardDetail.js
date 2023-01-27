@@ -8,42 +8,49 @@ import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IspostAtom } from '../../RecoilState/RecoilAtom'
+import { useRecoilValue } from 'recoil'
+
+
+
 
 
 
 
 export default function CardDetail() {
-    const [data ,setData] =useState([])
-
-useEffect(()=>{
-    const tweetData=JSON.parse(localStorage.getItem("userTweets")) 
-    setData(tweetData) 
-},[data])
+    const tweetData=useRecoilValue(IspostAtom)
+    console.log(tweetData)
+    // const [data, setData] = useState([])
+   
+    // console.log(data)
+ 
+// useEffect(()=>{
+//     const Data=JSON.parse(localStorage.getItem("userTweets")) 
+//     setData(Data)
+// },[data])
  
 
-console.log(data)
+
 
     return(
 
 
 
             <div  className={style.Wrapper} >
-                
-                 
+                              
                  <div className={style.ImageWrapper}>
-                     {data.map((item)=>
+                     {tweetData.map((item,id)=>
                      <>
-                     <h1>{item.tweet}</h1>
+                     <h1 key={id}>{item?.tweet}</h1>
                          <div className={style.heading}>
-                                <Link to={"/ProfilePage"}> <img className={style.img} src={Image} alt="Profile"/></Link>   
+                                <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   
                                 
                                
-                                <h2>{item.name}</h2>
-                                 <h5>{item.handlerName}</h5>
+                                <h2>{item?.name}</h2>
+                                 <h5>{item?.handlerName}</h5>
                         </div>
-                     <p>{item.name}</p>
+                        <p>{item?.tweets[0]?.tweetText}</p>
                      <img
-                         src = {item.tweetPic}
+                         src = {item?.tweets[0]?.tweetPic}
                          className={style.image}
                      />
 
@@ -66,6 +73,7 @@ console.log(data)
            
 
              </div>
+            // <><h1>sachin</h1></>
     )
 }
 

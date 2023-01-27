@@ -1,5 +1,6 @@
 export const postData = [
         {
+            id:1,
             name  : 'The White House',
             handlerName : '@The White House' ,
             organization : 'United States government organization',
@@ -32,7 +33,7 @@ export const postData = [
             ],
         },
         {
-    
+            id:2,
             name : 'Madhya Pradesh Tourism',
             handlerName : '@MPTourism',
             organization : 'Mp tourism',
@@ -65,6 +66,7 @@ export const postData = [
             ],
         },
         {
+            id:3,
            name : 'Dainik Bhaskar',
               handlerName : '@DainikBhaskar',
               organization : 'Tv News' ,
@@ -97,6 +99,7 @@ export const postData = [
             ],
         },
         {
+         id:4,
          name : 'kimkk',
          handlerName : '@ippittipapitti',
          organization : '',
@@ -130,6 +133,7 @@ export const postData = [
             ],
         },
         {
+        id:5,
          name : 'Arvind Kumar',
               handlerName : '@arvindtw',
               organization : '',
@@ -163,6 +167,7 @@ export const postData = [
             ],
         },
         {
+            id:6,
             name : 'Sudarsan Pattnaik',
               handlerName : '@sudarsansand',
              organization : '',
@@ -196,6 +201,7 @@ export const postData = [
             ],
         },
         {
+          id:7,
            name : 'BJP',
               handlerName : '@BJP4India',
               organization : '',

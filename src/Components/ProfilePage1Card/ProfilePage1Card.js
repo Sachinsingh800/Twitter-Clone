@@ -1,8 +1,12 @@
 import React from 'react'
 import style from './ProfilePage1Card.module.css'
 import Image from "../../Assest/Image/Profile.png"
+import { useParams } from 'react-router-dom'
+
 
 function ProfilePage1Card() {
+  const id = useParams();
+  console.log("userId" , id);
   return (
     <div className={style.main}>
           <div className={style.body}>

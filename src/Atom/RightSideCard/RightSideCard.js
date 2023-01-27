@@ -4,7 +4,7 @@ import TrendOption from '../TrendOption/TrendOption'
 
 
 function RightSideCard() {
-
+ const [newData, setNewData]=useState([])
   const [data ,setData] =useState(
 
      [
@@ -40,32 +40,30 @@ function RightSideCard() {
   ]
   )
   //  console.log(data)
-
+  // localStorage.setItem("trendData",JSON.stringify(data)) 
 
    const removeData=(id)=>{
 
     setData((data)=>data.filter((trend)=>trend.id !==id))
 
-    localStorage.setItem('trendData', JSON.stringify(data))
-
+    localStorage.setItem("trendData",JSON.stringify(data)) 
   }
 
- useEffect(()=>{
-  if (localStorage.getItem('trendData')) {
-     const trendsdata=(localStorage.getItem('trendData'))
-     const newData = JSON.parse(trendsdata)
-     setData(newData)
-  }else{
-    localStorage.setItem('trendData', JSON.stringify(data))
-  }
- },[])
+useEffect(()=>{
+ const TrendData=JSON.parse(localStorage.getItem('trendData'))
 
+ if(TrendData === null || TrendData.length === 0){
+   setNewData(data);
+  }else{
+    setNewData(TrendData)
+  }
+},[data])
 
   return (
     <div className={style.container}>
        <h2>what's happening.. ??</h2>
       {
-        data.map((elem, id) =>
+        newData?.map((elem, id) =>
         <> 
         <div key={id}  className={style.main}>
           <div>     
