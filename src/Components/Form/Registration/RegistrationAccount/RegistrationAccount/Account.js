@@ -66,14 +66,6 @@ function Account() {
 
 useEffect(()=>{
 
-  // if(!isValidString(password)){
-  //     alert('please set your account password !!')
-  //     return
-  // }
-  // if(!isValidString(date) || !isValidString(month) || !isValidString(year)){
-  //     alert('Invalid Date !!')
-  //     return
-  // }
   const userData = {
           Name ,
       ...(Phone && {Phone}),

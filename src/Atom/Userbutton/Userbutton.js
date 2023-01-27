@@ -7,13 +7,14 @@ import style from './Userbutton.module.css'
 import Image from '../../Assest/Image/Profile.png'
 import { BsThreeDots} from 'react-icons/bs'
 import {isUserLoggedInAtom}  from "../../../src/RecoilState/RecoilAtom"
-import { useRecoilState } from "recoil";
+import {  useSetRecoilState } from "recoil";
 
 export default function PopoverPopupState() {
-  const [userLoginStatus, setUserLoginStatus] = useRecoilState(isUserLoggedInAtom)
+  const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom)
 
   function Logout(){
-    localStorage.removeItem("userData")
+    // localStorage.removeItem("userData")
+    setUserLoggedInStatus (false)
     window.location.assign("/Login")
   }
   return (
@@ -49,7 +50,7 @@ export default function PopoverPopupState() {
             <Typography sx={{ p: 2 }}>
                 <ul>
                 <li>Add an existing account</li>
-                <button onClick={Logout}>Log out @sachin432</button>
+                <div onClick={Logout}>Log out @sachin432</div>
                </ul>
             </Typography>
           </Popover>

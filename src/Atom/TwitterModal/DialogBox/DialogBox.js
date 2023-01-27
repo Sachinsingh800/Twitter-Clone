@@ -3,20 +3,24 @@ import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import style  from './DialogBox.module.css'
 import Image from '../../../Assest/Image/Profile.png'
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import { BsImage } from 'react-icons/bs'
 import ImageUpload from '../../ImageUpload/ImageUpload';
-import {   postData } from '../../../Const/Const'; 
+import { useRecoilState } from 'recoil';
+import { IspostAtom } from '../../../RecoilState/RecoilAtom';
+
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function DialogBox() {
+ 
   const [data, setData] = useState("")
+  const [tweet, setTweet] = useRecoilState(IspostAtom)
   const [open, setOpen] = React.useState(false);
-  const [tweetData,setTweetData] = useState( postData )
-
+  // const [tweetData,setTweetData] = useState( postData )
+  // console.log(tweet)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,15 +30,18 @@ export default function DialogBox() {
     setOpen(false);
   };
 
-  function handleSummit(){
-
-    postData .unshift(data)
-    setTweetData({...tweetData,data})
-    alert("tweeet submitted")
-    console.log(tweetData)
+  function handleSummit(e){
+    e.preventDefault()
+    
+    setTweet([{"tweet":data},...tweet])
+  
   }
+ 
+ 
+    localStorage.setItem("userTweets",JSON.stringify(tweet))
+  
 
-
+ 
   return (
     <div>
       <button className={style.button1}  onClick={handleClickOpen}>
