@@ -10,6 +10,8 @@
 }
 .ImageWrapper{
     padding: 0rem 3rem;
+    border: 1px rgb(189, 184, 184) solid;
+    width: 29.9rem;
 }
 .bottomSection{
     display: flex;

@@ -6,9 +6,9 @@ import LikeButton from '../../Atom/LikeButton/LikeButton'
 import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
 import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import { IspostAtom } from '../../RecoilState/RecoilAtom'
 import { useRecoilValue } from 'recoil'
+
 
 
 
@@ -35,12 +35,10 @@ export default function CardDetail() {
 
 
 
-            <div  className={style.Wrapper} >
                               
                  <div className={style.ImageWrapper}>
                      {tweetData.map((item,id)=>
                      <>
-                     <h1 key={id}>{item?.tweet}</h1>
                          <div className={style.heading}>
                                 <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   
                                 
@@ -70,9 +68,9 @@ export default function CardDetail() {
                 
                 
                 
-           
+         
 
-             </div>
+           
             // <><h1>sachin</h1></>
     )
 }

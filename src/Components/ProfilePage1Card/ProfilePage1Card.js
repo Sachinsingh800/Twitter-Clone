@@ -6,6 +6,7 @@ import { IspostAtom } from '../../RecoilState/RecoilAtom'
 import { useRecoilValue } from 'recoil'
 
 
+
 function ProfilePage1Card() {
   const tweetData=useRecoilValue(IspostAtom)
 
@@ -54,7 +55,7 @@ console.log(data)
 
  )}
 
-   
+
 </> 
   )
 }

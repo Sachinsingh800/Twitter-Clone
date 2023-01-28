@@ -35,16 +35,16 @@ export default function DialogBox() {
     
     const newTweet =  {
       id: 10,
-      name  : 'The White House',
-      handlerName : '@The White House' ,
-      organization : 'United States government organization',
+      name  : 'Sachin',
+      handlerName : '@Sachin123' ,
+      organization : "",
       followers : 200,
       followings : 400,
       joinedDate : '22 dec 2022',
       tweets : [
           {
               tweetText : data,
-              tweetPic : 'https://lh3.googleusercontent.com/8ygpNx4Er1H9LmB-D8W7cBi-qsvcDSDlWw2CVIk5bHFM77q6a46V0GNxSzopAUtvLKIApDTW7RKnrJ7m7Yp4obN1s23V3dRMrYLwvz5GJc_gu1N-M8tGkyhFYGf40nwZCg7jbgGa1g=w1920-h1080',
+              // tweetPic : '',
               tweetCount : 100,
               retweetCount : 100 ,
               likesCount : 100,
@@ -67,7 +67,7 @@ export default function DialogBox() {
       ],
     }
     setTweet([newTweet, ...tweet])
-  
+    setOpen(false);
   }
  
     localStorage.setItem("userTweets",JSON.stringify(tweet))

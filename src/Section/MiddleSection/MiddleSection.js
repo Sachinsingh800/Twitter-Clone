@@ -7,15 +7,18 @@ import CardDetail from '../../Components/CardDetail/CardDetail'
 
 
 
+
+
 function MiddleSection() {
 
   return (
     <div className={style.main}>
        <div className={style.header}><MiddleSectionHeader /></div>  
-   
        <div className={style.body}>
          <div className={style.sectionmain}><MiddleSectionMain/></div> 
+       
        </div>
+       
        <CardDetail/>
     </div>
   )

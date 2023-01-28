@@ -52,7 +52,7 @@ useEffect(()=>{
  const TrendData=JSON.parse(localStorage.getItem('trendData'))
 
  if(TrendData === null || TrendData.length === 0){
-   setNewData([]);
+   setNewData(data);
   }else{
     setNewData(TrendData)
   }
@@ -84,3 +84,4 @@ useEffect(()=>{
 }
 
 export default RightSideCard
+
