@@ -18,7 +18,7 @@ import { useRecoilValue } from 'recoil'
 
 export default function CardDetail() {
     const tweetData=useRecoilValue(IspostAtom)
-    console.log(tweetData)
+    // console.log(tweetData)
     // const [data, setData] = useState([])
    
     // console.log(data)
