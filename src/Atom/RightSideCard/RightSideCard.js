@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './RightSideCard.module.css'
 import TrendOption from '../TrendOption/TrendOption'
+import RightSideTrendOption from '../RightSideTrendOption/RightSideTrendOption'
 
 
 function RightSideCard() {
@@ -10,30 +11,30 @@ function RightSideCard() {
      [
       {
         id:0,
-      name:"Sport-Trending1",
+      name:"Sport-Trending",
       trends:"#AlNassr",
       Link:"Trending with #PSGRCSA",
       isNotInterested:true,
     },
       {
         id:1,
-      name:"Sport-Trending2",
-      trends:"#AlNassr",
-      Link:"Trending with #PSGRCSA",
+      name:"Trending in india",
+      trends:"#Bts",
+      Link:"33.k tweets",
       isNotInterested:false,
     },
       {
         id:2,
-      name:"Sport-Trending3",
-      trends:"#AlNassr",
-      Link:"Trending with #PSGRCSA",
+      name:"Trending in india",
+      trends:"#BCCI",
+      Link:"11.2k tweets",
       isNotInterested:false,
     },
       {
         id:3,
-      name:"Sport-Trending4",
-      trends:"#AlNassr",
-      Link:"Trending with #PSGRCSA",
+      name:"indian Premier league",
+      trends:"#Ishan Kishan",
+      Link:"23k tweets ",
       isNotInterested:false,
     },
   
@@ -73,8 +74,10 @@ useEffect(()=>{
                         <div className={style.trends}>{elem.trends}</div>
                         <div className={style.para}>{elem.Link}</div>    
           </div>
+                        <div className={style.option}>{elem.option}</div>     
                         <div><TrendOption  handleClicked={()=>removeData(elem.id)} /> </div>
-                        <div className={style.option}>{elem.option}</div>       
+                        {/* <RightSideTrendOption/> */}
+                         
         </div>
 
         
