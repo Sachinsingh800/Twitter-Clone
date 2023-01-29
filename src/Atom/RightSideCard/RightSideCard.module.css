@@ -14,3 +14,11 @@
 .container h2{
    margin-left: 1rem;
 }
+.trends{
+   color: blue;
+   font-weight: 700;
+   font-size: large;
+}
+.para{
+   font-size: medium;
+}

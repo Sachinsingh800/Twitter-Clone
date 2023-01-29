@@ -19,13 +19,14 @@ function Page1() {
       })
     
   return (
-    <>
- 
+
+ <div className={style.main}>
  
 
     { data.map((item)=>
 
 <>
+
 <div className={style.heading}>
             <img className={style.img} src={Image} alt="Profile"/>
             <h2>{item.name}</h2>
@@ -36,8 +37,8 @@ function Page1() {
              <p>{item.tweets[0].tweetText}</p>
             <img src = {item.tweets[0].tweetPic} className={style.image}/>
 </div>
-</>
 
+</>
     )}
 
 
@@ -50,8 +51,8 @@ function Page1() {
                  </div>
               
 
-        
-    </>
+                 </div>
+
   )
 }
 

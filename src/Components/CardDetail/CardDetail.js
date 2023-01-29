@@ -28,7 +28,7 @@ export default function CardDetail() {
 //     setData(Data)
 // },[data])
  
-
+console.log(tweetData)
 
 
     return(

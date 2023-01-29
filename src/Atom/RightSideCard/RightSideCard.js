@@ -41,6 +41,9 @@ function RightSideCard() {
   )
   //  console.log(data)
   // localStorage.setItem("trendData",JSON.stringify(data)) 
+  const handleClosed=()=>{
+    
+  }
 
    const removeData=(id)=>{
 
@@ -66,11 +69,11 @@ useEffect(()=>{
         <> 
         <div key={id}  className={style.main}>
           <div>     
-                          <div>{elem.name}</div>
-                        <div>{elem.trends}</div>
-                        <div>{elem.Link}</div>    
+                          <div className={style.para}>{elem.name}</div>
+                        <div className={style.trends}>{elem.trends}</div>
+                        <div className={style.para}>{elem.Link}</div>    
           </div>
-                        <div><TrendOption handleClicked={()=>removeData(elem.id)} /> </div>
+                        <div><TrendOption  handleClicked={()=>removeData(elem.id)} /> </div>
                         <div className={style.option}>{elem.option}</div>       
         </div>
 
