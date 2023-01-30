@@ -1,132 +1,109 @@
-// imports the React Javascript Library
-import React from "react";
-//Card
-import Card from "@material-ui/core/Card";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Avatar from "@material-ui/core/Avatar";
+import style from './ImageUpload.module.css'
+import CollectionsIcon from '@mui/icons-material/Collections';
+import GifBoxOutlinedIcon from '@mui/icons-material/GifBoxOutlined';
+import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { useRef, useState } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
 
-//Tabs
-import { withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
-  root: {
-    width: 500,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-end"
-  },
-  input: {
-    display: "none"
-  },
-  img: {
-    width: 200,
-    height: 256,
-    margin: "auto",
-    display: "block",
-    maxWidth: "100%",
-    maxHeight: "100%"
-  }
-});
 
-class ImageUploadCard extends React.Component {
-  state = {
-    mainState: "initial", // initial
-    imageUploaded: 0,
-    selectedFile: "avatar.jpg"
-  };
+export default function ImageUpload ({isCloseBtnVisible = false , handleClickCloseBtn}) {
 
-  handleUploadClick = event => {
-    console.log();
-    var file = event.target.files[0];
-    const reader = new FileReader();
-    var url = reader.readAsDataURL(file);
+    const [image,setImage] = useState('')
+    const inputRef = useRef(null)
 
-    reader.onloadend = function(e) {
-      this.setState({
-        selectedFile: [reader.result]
-      });
-    }.bind(this);
-    console.log(url); // Would see a path?
+    const iconList = [
+        {
+            icon : <CollectionsIcon
+            className={style.icon}
+            />,
+            action : 'pickImage'
 
-    this.setState({
-      mainState: "uploaded",
-      selectedFile: event.target.files[0],
-      imageUploaded: 1
-    });
-  };
+        },
+        {
+            icon : <GifBoxOutlinedIcon
+            className={style.icon}
+            />,
 
-  renderInitialState() {
-    const { classes, theme } = this.props;
-    const { value } = this.state;
-
-    return (
-      <Grid container direction="column" alignItems="center">
-        <Grid item>
-          <img
-            width="100%"
-            className={classes.img}
-            src={this.state.selectedFile}
-          />
-        </Grid>
-        <label htmlFor="contained-button-file">
-          <Button variant="contained" component="span">
-            Select Image
-            <input
-              accept="image/*"
-              className={classes.input}
-              id="contained-button-file"
-              multiple
-              type="file"
-              onChange={this.handleUploadClick}
+        },
+        {
+            icon : <ListOutlinedIcon
+            className={style.icon}
+            />,
+        },
+        {
+            icon : <EmojiEmotionsOutlinedIcon
+            className={style.icon}
+            />,
+        },
+        {
+            icon :  <LocationOnOutlinedIcon
+            className={style.icon}
             />
-          </Button>
-        </label>
-      </Grid>
-    );
-  }
+        }  
+    ]
 
-  renderUploadedState() {
-    const { classes, theme } = this.props;
 
-    return (
-      <Grid container direction="column" alignItems="center">
-        <Grid item>
-          <img
-            width="100%"
-            className={classes.img}
-            src={this.state.selectedFile}
-          />
-        </Grid>
-        <label htmlFor="contained-button-file">
-          <Button variant="contained" component="span">
-            Select Image
+    function handleOnClickIcon (action) {
+        if(action === 'pickImage'){       
+            inputRef.current.click()
+        }
+    }
+
+
+    function handleOnSelectImage (e) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            setImage(e.target.result);
+            inputRef.current = null 
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+    return(
+        <div >
+            {
+                isCloseBtnVisible && 
+                <div className={style.crossContainer}>
+                    <CloseIcon onClick = {handleClickCloseBtn}/>
+                </div>
+            }
+
+           { 
+            image &&  
+            <div className={style.imageWrapper}>
+                <img
+                    src={image}
+                    height = '40%'
+                    width = '40%'
+                    alt = 'foo'
+                />
+                </div>
+            }
+           {/* tweet btn and icon container */}
+
+            <div className={style.tweetFooterWrapper}>
+
+                <div className={style.icons}>
+                    {iconList.map(({icon,action},index) => (
+                        <div 
+                            onClick={
+                                () => handleOnClickIcon(action)
+                            }
+                        >{icon}</div>
+                    ))}
+                </div>
+
+            </div>
             <input
-              accept="image/*"
-              className={classes.input}
-              id="contained-button-file"
-              multiple
-              type="file"
-              onChange={this.handleUploadClick}
+                type = 'file'
+                hidden
+                ref={inputRef}
+                onChange = {handleOnSelectImage}
+                name = 'tweetPic'
             />
-          </Button>
-        </label>
-      </Grid>
-    );
-  }
 
-  render() {
-    const { classes, theme } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <Card className={this.props.cardName}>
-          {(this.state.mainState == "initial" && this.renderInitialState()) ||
-            (this.state.mainState == "uploaded" && this.renderUploadedState())}
-        </Card>
-      </div>
-    );
-  }
+        </div>
+    )
 }
-
-export default withStyles(styles, { withTheme: true })(ImageUploadCard);

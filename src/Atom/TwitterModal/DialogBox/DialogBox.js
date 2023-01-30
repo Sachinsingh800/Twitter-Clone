@@ -9,18 +9,81 @@ import ImageUpload from '../../ImageUpload/ImageUpload';
 import { useRecoilState } from 'recoil';
 import { IspostAtom } from '../../../RecoilState/RecoilAtom';
 
+import CollectionsIcon from '@mui/icons-material/Collections';
+import GifBoxOutlinedIcon from '@mui/icons-material/GifBoxOutlined';
+import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { useRef  } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+
+
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function DialogBox() {
- 
+
+  const [image,setImage] = useState('')
+    const inputRef = useRef(null)
+
+
+
   const [data, setData] = useState("")
   const [tweet, setTweet] = useRecoilState(IspostAtom)
   const [open, setOpen] = React.useState(false);
   // const [tweetData,setTweetData] = useState( postData )
   // console.log(tweet)
+
+
+  const iconList = [
+    {
+        icon : <CollectionsIcon
+        className={style.icon}
+        />,
+        action : 'pickImage'
+
+    },
+    {
+        icon : <GifBoxOutlinedIcon
+        className={style.icon}
+        />,
+
+    },
+    {
+        icon : <ListOutlinedIcon
+        className={style.icon}
+        />,
+    },
+    {
+        icon : <EmojiEmotionsOutlinedIcon
+        className={style.icon}
+        />,
+    },
+    {
+        icon :  <LocationOnOutlinedIcon
+        className={style.icon}
+        />
+    }  
+]
+
+
+function handleOnClickIcon (action) {
+    if(action === 'pickImage'){       
+        inputRef.current.click()
+    }
+}
+
+
+function handleOnSelectImage (e) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+        setImage(e.target.result);
+        inputRef.current = null 
+    };
+    reader.readAsDataURL(e.target.files[0]);
+}
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,7 +107,7 @@ export default function DialogBox() {
       tweets : [
           {
               tweetText : data,
-              // tweetPic : '',
+              tweetPic : image,
               tweetCount : 100,
               retweetCount : 100 ,
               likesCount : 100,
@@ -87,11 +150,57 @@ export default function DialogBox() {
        <input className={style.input}  onChange={(e)=> setData(e.target.value)} value={data} placeholder="What's happening?"></input>
       </div>
       <div>
-      <ImageUpload cardName="Input Image" />,
+     
       </div>
+      <div >
+         
+
+           { 
+            image &&  
+            <div className={style.imageWrapper}>
+                <img
+                    src={image}
+                    height = '40%'
+                    width = '40%'
+                    alt = 'foo'
+                />
+                </div>
+            }
+           {/* tweet btn and icon container */}
+
+            <div className={style.tweetFooterWrapper}>
+
+                <div className={style.icons}>
+                    {iconList.map(({icon,action},index) => (
+                        <div 
+                            onClick={
+                                () => handleOnClickIcon(action)
+                            }
+                        >{icon}</div>
+                    ))}
+                </div>
+
+            </div>
+            <input
+                type = 'file'
+                hidden
+                ref={inputRef}
+                onChange = {handleOnSelectImage}
+                name = 'tweetPic'
+            />
+
+        </div>
       <button onClick={handleSummit}   className={style.tweet} >Tweet</button>
        </Dialog>
       
     </div>
   );
 }
+
+
+
+
+
+
+
+

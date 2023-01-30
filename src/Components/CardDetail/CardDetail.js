@@ -18,24 +18,13 @@ import { useRecoilValue } from 'recoil'
 
 export default function CardDetail() {
     const tweetData=useRecoilValue(IspostAtom)
-    // console.log(tweetData)
-    // const [data, setData] = useState([])
-   
-    // console.log(data)
- 
-// useEffect(()=>{
-//     const Data=JSON.parse(localStorage.getItem("userTweets")) 
-//     setData(Data)
-// },[data])
- 
+    // const [isShow ,]
+
 console.log(tweetData)
 
 
     return(
-
-
-
-                              
+             
                  <div className={style.ImageWrapper}>
                      {tweetData.map((item,id)=>
                      <>
@@ -48,8 +37,8 @@ console.log(tweetData)
                         </div>
                         <p>{item?.tweets[0]?.tweetText}</p>
                      <img
-                         src = {item?.tweets[0]?.tweetPic}
-                         className={style.image}
+                       className={style.image}
+                         src = {item?.tweets[0]?.tweetPic}    
                      />
 
                      
@@ -66,12 +55,6 @@ console.log(tweetData)
                
                  </div>
                 
-                
-                
-         
-
-           
-            // <><h1>sachin</h1></>
     )
 }
 

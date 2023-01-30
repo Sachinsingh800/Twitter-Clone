@@ -12,8 +12,12 @@ import {  useSetRecoilState } from "recoil";
 export default function PopoverPopupState() {
   const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom)
 
+
+ const data=JSON.parse(localStorage.getItem("userData")) 
+ const userData=[data]
+console.log( userData)
+
   function Logout(){
-    // localStorage.removeItem("userData")
     setUserLoggedInStatus (false)
     window.location.assign("/Login")
   }
@@ -27,8 +31,14 @@ export default function PopoverPopupState() {
              
               <span><img  className={style.img} src={Image}></img></span> 
                <span>
-               <div className={style.name}>sachin</div> 
-               <div className={style.name}>sachin@gmail123</div> 
+               { userData.map((item)=>
+               <>
+                   <div className={style.name}>{item.Name}</div> 
+              
+                   <div className={style.name}>{item.Email}</div> 
+                   </>
+               )}
+           
                </span>
              <span className={style.dot}><BsThreeDots/></span> 
            
@@ -50,7 +60,9 @@ export default function PopoverPopupState() {
             <Typography sx={{ p: 2 }}>
                 <ul>
                 <li>Add an existing account</li>
-                <div onClick={Logout}>Log out @sachin432</div>
+                { userData.map((item)=>
+                <div onClick={Logout}>{item.Email}</div>
+)}
                </ul>
             </Typography>
           </Popover>

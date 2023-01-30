@@ -4,9 +4,11 @@
     align-items: center;
 }
 .image{
-    height: 25rem;
-    width: 30rem;
-    border-radius: 10px;
+  max-width: 30rem;
+  max-height: 30rem;
+  aspect-ratio: 3/2;
+  border-radius: 20px;
+  /* object-fit: cover; */
 }
 .ImageWrapper{
     padding: 0rem 3rem;
