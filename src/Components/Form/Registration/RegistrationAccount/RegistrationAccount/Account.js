@@ -6,8 +6,10 @@ import Input from "../../../../../Atom/Input/Input";
 import MonthDropdown from "../Month/Month";
 import YearDropdown from "../Year/Year";
 import DayDropdown from "../Day/Day";
-import {isUserLoggedInAtom}  from "../../../../../RecoilState/RecoilAtom"
-import { useRecoilState } from "recoil";
+import {isUserLoggedInAtom ,loggedInUserAtom }  from "../../../../../RecoilState/RecoilAtom"
+import {useNavigate} from 'react-router-dom'
+import { useSetRecoilState } from "recoil";
+
 
 import { 
   isValidEmailSyntax ,
@@ -20,17 +22,18 @@ import {
 
 
 function Account() {
+  const navigate = useNavigate()
   const [toggle, setToggle] = useState(false);
   const [Name, setName] = useState(" ");
   const [Email, setEmail] = useState(" ");
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
-  const [userLoginStatus, setUserLoginStatus] = useRecoilState(isUserLoggedInAtom)
+  const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
+  const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
 
 
   function submitFunction(e){
     e.preventDefault()
-
     if(!isValidString(Name))
     {
       alert("add proper Name")
@@ -49,7 +52,9 @@ function Account() {
         if(!isValidEmailSyntax(Email))
       {
         alert("Give correct email")
+        return
       }  
+     
   }
   
     if(!isValidPassword(Password))
@@ -59,26 +64,24 @@ function Account() {
     }
 
     alert("successfully submited")
-    setUserLoginStatus(true)
-    window.location.assign("/HomePage")   
+    setLoggedInUser(userData)
+        setUserLoginStatus(true)
+        navigate("/HomePage")
 }
 
 
-useEffect(()=>{
+
+
 
   const userData = {
-          Name ,
-      ...(Phone && {Phone}),
-      ...(Email && {Email}),
-         Password,
-      // ...(userLoginStatus && {userLoginStatus})
-      userLoginStatus
-         
-      // dateOfBirth : `${date + '/' + month + '/' + year}`
-  }
-  console.log(userData)
+    Name ,
+...(Phone && {Phone}),
+...(Email && {Email}),
+   Password,
+   
+}
+console.log(userData)
   localStorage.setItem('userData',JSON.stringify(userData))
-},[userLoginStatus])
 
 
   function emailLogin() {

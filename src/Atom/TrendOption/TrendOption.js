@@ -6,8 +6,11 @@ import style from './TrendOption.module.css'
 import { BsThreeDots} from 'react-icons/bs'
 
 export default function TrendOption({handleClicked}) {
+  // const [isShow,setShow]= useState(false)
 
-
+function handleClose(){
+// setShow(true)
+}
 
 
   return (
@@ -32,7 +35,7 @@ export default function TrendOption({handleClicked}) {
           
           >
             <Typography sx={{ p: 2 }}>
-                <div className={style.retweetbtn}>
+                <div onClick={handleClose} className={style.retweetbtn}>
                 <button onClick={handleClicked}>Not Intrested</button>
                 <button >This trend is harmful or spammy</button>
                </div>

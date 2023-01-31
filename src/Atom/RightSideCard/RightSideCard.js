@@ -42,14 +42,13 @@ function RightSideCard() {
   )
   //  console.log(data)
   // localStorage.setItem("trendData",JSON.stringify(data)) 
-  const handleClosed=()=>{
-    
-  }
+
 
    const removeData=(id)=>{
 
     setData((data)=>data.filter((trend)=>trend.id !==id))
     localStorage.setItem("trendData",JSON.stringify(data)) 
+
   }
 
 useEffect(()=>{
