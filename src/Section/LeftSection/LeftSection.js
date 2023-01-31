@@ -28,7 +28,7 @@ function LeftSection({toggled}) {
        { icon:<GoMail/>, Option: 'Messages' , },
        { icon:<BsBookmark/>, Option: 'BookMarks' ,},
        { icon:<RiFileList2Line/>,  Option: 'List' ,},
-       { icon:<CgProfile/>,   Option:"Profile" , path:"/ProfilePage"},
+       { icon:<CgProfile/>,   Option:"Profile" , path:"/UserProfilePage"},
          {icon:<CiCircleMore/>,   Option: 'More' ,},
      ]
  

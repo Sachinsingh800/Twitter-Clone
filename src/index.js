@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
+import UserProfilePage from './Components/UserProfilePage/UserProfilePage';
 
 
 
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
   {
     path: "/ProfilePage/:id",
     element: <ProfilePage/>,
+  },
+ 
+  {
+    path: "/UserProfilePage",
+    element: <UserProfilePage />,
   },
  
 
