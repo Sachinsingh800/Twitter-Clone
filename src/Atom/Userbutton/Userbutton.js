@@ -59,7 +59,6 @@ console.log( userData)
           >
             <Typography sx={{ p: 2 }}>
                 <ul>
-                <li>Add an existing account</li>
                 { userData.map((item)=>
                 <div onClick={Logout}><h4>Logout-</h4>{item.Email}</div>
 )}

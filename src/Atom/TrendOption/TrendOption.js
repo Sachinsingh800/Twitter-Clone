@@ -35,9 +35,9 @@ function handleClose(){
           
           >
             <Typography sx={{ p: 2 }}>
-                <div onClick={handleClose} className={style.retweetbtn}>
-                <button onClick={handleClicked}>Not Intrested</button>
-                <button >This trend is harmful or spammy</button>
+                 
+                <div  onClick={handleClicked} className={style.retweetbtn}>
+                <button >Not Intrested</button>
                </div>
             </Typography>
           </Popover>
