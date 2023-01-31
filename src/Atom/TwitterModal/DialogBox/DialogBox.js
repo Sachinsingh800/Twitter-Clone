@@ -4,8 +4,6 @@ import Slide from '@mui/material/Slide';
 import style  from './DialogBox.module.css'
 import Image from '../../../Assest/Image/Profile.png'
 import { useState ,useEffect} from 'react';
-import { BsImage } from 'react-icons/bs'
-import ImageUpload from '../../ImageUpload/ImageUpload';
 import { useRecoilState } from 'recoil';
 import { IspostAtom } from '../../../RecoilState/RecoilAtom';
 
@@ -98,8 +96,8 @@ function handleOnSelectImage (e) {
     
     const newTweet =  {
       id: 10,
-      name  : 'Sachin',
-      handlerName : '@Sachin123' ,
+      name  : 'username',
+      handlerName : '' ,
       organization : "",
       followers : 200,
       followings : 400,
