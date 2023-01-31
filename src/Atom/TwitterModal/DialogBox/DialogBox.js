@@ -15,7 +15,7 @@ import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef  } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
+
 
 
 
@@ -80,7 +80,7 @@ function handleOnSelectImage (e) {
     let reader = new FileReader();
     reader.onload = (e) => {
         setImage(e.target.result);
-        inputRef.current = null 
+        // inputRef.current = null 
     };
     reader.readAsDataURL(e.target.files[0]);
 }
@@ -131,6 +131,9 @@ function handleOnSelectImage (e) {
     }
     setTweet([newTweet, ...tweet])
     setOpen(false);
+    setImage(" ")
+    setData(" ")
+    inputRef.current.value=""
   }
  
     localStorage.setItem("userTweets",JSON.stringify(tweet))
@@ -162,7 +165,6 @@ function handleOnSelectImage (e) {
                     src={image}
                     height = '40%'
                     width = '40%'
-                    alt = 'foo'
                 />
                 </div>
             }
