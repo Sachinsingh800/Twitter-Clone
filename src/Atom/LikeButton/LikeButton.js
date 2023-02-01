@@ -11,7 +11,7 @@ function LikeButton() {
     }
   return (
     <div>
-      <button className={style.button}  onClick={Counter}><span className={style.icon}>{isShow ? <span style={{fontSize:"20px"}}><FcLike/></span> : <BsSuitHeart/> }</span>{ isShow ? 1 : 0}</button>
+      <button className={style.button}  onClick={Counter}><span className={style.icon}>{isShow ? <span style={{fontSize:"20px"}}><FcLike/></span> : <BsSuitHeart/> }</span>{ isShow ? 8 : 7}</button>
     </div>
   )
 }

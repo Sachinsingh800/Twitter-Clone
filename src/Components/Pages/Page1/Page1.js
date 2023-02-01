@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CommentDialogBox from '../../../Atom/CommentDialogBox/CommentDialogBox'
 import LikeButton from '../../../Atom/LikeButton/LikeButton'
 import RetweetButton from '../../../Atom/RetweetButton/RetweetButton'
@@ -7,9 +7,11 @@ import Image from '../../../Assest/Image/Profile.png'
 import { IspostAtom } from '../../../RecoilState/RecoilAtom'
 import { useRecoilValue } from 'recoil'
 import { useParams } from 'react-router-dom'
+import TweetReplies from '../../TweetReplies/TweetReplies'
 
 function Page1() {
     const tweetData=useRecoilValue(IspostAtom)
+    const [toggle ,setToggle] = useState(false)
 
     const id = useParams();
     const uid=id.id
@@ -18,41 +20,74 @@ function Page1() {
         return uid==item.id
       })
     
+      function handlesubmit(){
+      setToggle(!toggle)
+      }
   return (
-
- <div className={style.main}>
+    <>
+{toggle ? <div onClick={handlesubmit} className={style.main}>
  
 
-    { data.map((item)=>
+{ data.map((item)=>
 
 <>
 
 <div className={style.heading}>
-            <img className={style.img} src={Image} alt="Profile"/>
-            <h2>{item.name}</h2>
-            <h5>{item.handlerName}</h5>
+        <img className={style.img} src={Image} alt="Profile"/>
+        <h2>{item.name}</h2>
+        <h5>{item.handlerName}</h5>
 </div>
 
 <div className={style.ImageWrapper}>
-             <p>{item.tweets[0].tweetText}</p>
-            <img src = {item.tweets[0].tweetPic} className={style.image}/>
+         <p>{item.tweets[0].tweetText}</p>
+        <img src = {item.tweets[0].tweetPic} className={style.image}/>
 </div>
 
 </>
-    )}
+)}
 
 
-                 
-                
-                 <div className={style.bottomSection}>
-                    <CommentDialogBox/>
-                    <RetweetButton/>
-                    <LikeButton/>
-                 </div>
+             
+            
+             <div className={style.bottomSection}>
+                <CommentDialogBox/>
+                <RetweetButton/>
+                <LikeButton/>
+             </div>
+             <TweetReplies/>
+             </div> : <div onClick={handlesubmit} className={style.main}>
+ 
+
+ { data.map((item)=>
+ 
+ <>
+ 
+ <div className={style.heading}>
+         <img className={style.img} src={Image} alt="Profile"/>
+         <h2>{item.name}</h2>
+         <h5>{item.handlerName}</h5>
+ </div>
+ 
+ <div className={style.ImageWrapper}>
+          <p>{item.tweets[0].tweetText}</p>
+         <img src = {item.tweets[0].tweetPic} className={style.image}/>
+ </div>
+ 
+ </>
+ )}
+ 
+ 
               
+             
+              <div className={style.bottomSection}>
+                 <CommentDialogBox/>
+                 <RetweetButton/>
+                 <LikeButton/>
+              </div>
 
-                 </div>
-
+              </div> }
+ 
+             </>
   )
 }
 

@@ -4,7 +4,7 @@ import  style from "./ProfileSection.module.css"
 
 import Page1 from '../../Components/Pages/Page1/Page1'
 import ProfilePage1Card from '../../Components/ProfilePage1Card/ProfilePage1Card'
-import TweetReplies from '../../Components/TweetReplies/TweetReplies'
+
 
 
 function ProfileSection() {
@@ -16,7 +16,7 @@ function ProfileSection() {
     <div>
         <Page1/>
     </div>
-     <TweetReplies/>
+   
     </div>
   )
 }
