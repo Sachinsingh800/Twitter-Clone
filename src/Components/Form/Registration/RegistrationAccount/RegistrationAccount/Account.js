@@ -62,7 +62,7 @@ function Account() {
           alert('add strong Password !!')
            return
     }
-
+    localStorage.setItem('userData',JSON.stringify(userData))
     alert("successfully submited")
     setLoggedInUser(userData)
         setUserLoginStatus(true)
@@ -81,7 +81,7 @@ function Account() {
    
 }
 console.log(userData)
-  localStorage.setItem('userData',JSON.stringify(userData))
+
 
 
   function emailLogin() {

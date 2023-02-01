@@ -8,9 +8,10 @@ import UserProfileSection from '../UserProfileSection/UserProfileSection'
 function UserProfilePage() {
   return (
     <div className={style.main}>
-      <LeftSection/>
-      <UserProfileSection />
-      <RightSection />
+      
+      <div className={style.child1}><LeftSection/></div>
+      <div className={style.child2}><UserProfileSection /></div>
+     <div className={style.child3}> <RightSection /></div>
     </div>
   )
 }

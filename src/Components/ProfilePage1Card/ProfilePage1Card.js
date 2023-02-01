@@ -48,7 +48,6 @@ console.log(data)
                      </div>
 <img src={Image} className={style.profileimg}></img>
 </div>
-
 </div>
 
 

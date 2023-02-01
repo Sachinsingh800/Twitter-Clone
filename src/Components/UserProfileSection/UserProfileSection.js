@@ -3,8 +3,24 @@ import style from './UserProfileSection.module.css'
 import ProfileSectionHeader from '../ProfileSectionHeader/ProfileSectionHeader'
 import Image from '../../Assest/Image/Profile.png'
 import { useNavigate } from 'react-router-dom'
+import { IspostAtom } from '../../RecoilState/RecoilAtom'
+import { useRecoilValue } from 'recoil'
+import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
+import RetweetButton from '../../Atom/RetweetButton/RetweetButton'
+import LikeButton from '../../Atom/LikeButton/LikeButton'
+import { useParams } from 'react-router-dom'
 
 function UserProfileSection() {
+  const tweetData=useRecoilValue(IspostAtom)
+  console.log(tweetData)
+
+  const id = useParams();
+  const uid=id.id
+  // console.log(uid)
+
+  const tweetdata= tweetData.filter((item)=>{
+    return 10==item.id
+  })
        const navigate = useNavigate()
     const newdata=JSON.parse(localStorage.getItem("userData"))
     const data=[newdata]
@@ -12,6 +28,9 @@ function UserProfileSection() {
         navigate("/HomePage")
        }
   return (
+    <>
+    {/* //header part */}
+
     <div className={style.header}>
         <span onClick={handleClick}>←</span>
         <div className={style.head}>
@@ -21,8 +40,11 @@ function UserProfileSection() {
       
         <h6>1 Tweet</h6>
         </div>
+     </div>
 
-      <div>
+
+
+
 
 <div  className={style.userProfiledetails}>
 
@@ -47,12 +69,39 @@ function UserProfileSection() {
                             <button>Media</button>
                            <button>Likes</button>
                         </div>
-
+                       
                         
                      </div>
 <img src={Image} className={style.profileimg}></img>
 </div>
 
+{tweetdata.map((item)=>
+<>
+<div className={style.userbody}>
+<div className={style.tweetbox}>
+<div className={style.heading}>
+                                 <img className={style.img} src={Image} alt="Profile"/>
+                                
+                               
+                                <h2>{item?.name}</h2>
+                                 <h5>{item?.handlerName}</h5>
+                        </div>
+                        <p>{item?.tweets[0]?.tweetText}</p>
+                     <img
+                       className={style.image}
+                         src = {item?.tweets[0]?.tweetPic}    
+                     />
+
+</div>
+
+                <div className={style.bottomSection}>
+                    <CommentDialogBox/>
+                    <RetweetButton/>
+                     <LikeButton/>
+                  </div>
+                  </div>
+</>
+)}
 </div>
 
 
@@ -60,8 +109,9 @@ function UserProfileSection() {
  )}
 </div>
     
-      </div>
-    </div>
+      
+    
+      </>
   )
 }
 
