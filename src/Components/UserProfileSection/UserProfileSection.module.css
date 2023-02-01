@@ -75,7 +75,9 @@
 .userProfiledetails{
     margin-top: 3.7rem;
     width: 36rem;
+    height: 35rem;
     overflow-y: scroll;
+    /* border: 1px red solid; */
 }
 
 .heading{
@@ -108,3 +110,6 @@ border: 1px rgb(216, 216, 216) solid;
     margin-left: 3rem;
     /* object-fit: cover; */
   }
+  .userProfiledetails::-webkit-scrollbar{
+    display:none;
+}
