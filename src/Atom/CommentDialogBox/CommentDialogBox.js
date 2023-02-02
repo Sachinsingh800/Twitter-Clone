@@ -5,12 +5,15 @@ import style  from './CommentDialogBox.module.css'
 import Image from '../../Assest/Image/Profile.png'
 import { useState } from 'react';
 import {BiMessageRounded} from 'react-icons/bi';
+import { useRecoilState } from 'recoil';
+import { IspostAtom } from '../../RecoilState/RecoilAtom';
 
 const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function CommentDialogBox() {
+  const [tweet, setTweet] = useRecoilState(IspostAtom)
     const [count ,setCount] = useState(0)
   const [data, setData] = useState("")
   const [open, setOpen] = React.useState(false);
@@ -24,7 +27,11 @@ export default function CommentDialogBox() {
     setOpen(false);
   };
 
+// console.log(newdata)
   function handleSummit(){
+ const newData=tweet[0].tweets[0].TweetReplies
+setTweet({newData},...tweet)
+console.log(tweet)
    setData(data)
    setData('')
    setCount(count +1)

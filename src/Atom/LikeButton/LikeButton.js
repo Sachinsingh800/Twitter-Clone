@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import {BsSuitHeart} from 'react-icons/bs';
 import {FcLike} from 'react-icons/fc';
-import { useRecoilState } from 'recoil';
 import style from "./LikeButton.module.css"
 
 function LikeButton() {

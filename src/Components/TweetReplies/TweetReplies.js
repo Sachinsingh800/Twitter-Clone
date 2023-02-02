@@ -11,7 +11,7 @@ import LikeButton from '../../Atom/LikeButton/LikeButton'
 function TweetReplies() {
     const tweetData=useRecoilValue(IspostAtom)
 
-
+ const userData= JSON.parse(localStorage.getItem("userData"))
 
   
     const id = useParams();
@@ -21,33 +21,31 @@ function TweetReplies() {
     const data= tweetData.filter((item)=>{
       return uid==item.id
     })
-      
+    const replies=[
+      {
+        name : userData.Name,
+        handlerName : userData.Email,
+        tweetReplyText : 'Lorem Ipsum is simply dummy text of the printing'
+    },
+    ]
+   const newData= data[0].tweets[0].TweetReplies.concat(replies)
+console.log( data[0].tweets[0].TweetReplies.concat(replies))
 
-    // console.log(data)
-
-  //   const newTweet={
-  //     name : 'Kirti',
-  //     handlerName : '@Kirti567',
-  //     tweetReplyText : 'Lorem Ipsum is simply dummy text of the printing'
-  // }
-
-    let newData=data[0].tweets[0].TweetReplies.push()
-    console.log(newData)
     
   return (
     <div className={style.main}>
-      {data.map((elem)=>
+      { newData.map((item)=>
       <>
-      <div className={style.firstdiv}>
+          <div className={style.firstdiv}>
       <div className={style.body}>
         <img  className={style.img} src={Image} alt="Profile" />
         <div className={style.userDetails}>
-        <h4>{`${elem.tweets[0].TweetReplies[0].name}  ${elem.tweets[0].TweetReplies[0].handlerName}`}</h4>
-        <h5>Replying to <span className={style.handlerName}>{elem.handlerName}</span></h5>
+        <h4>{`${item.name}  ${item.handlerName}`}</h4>
+        <h5>Replying to <span className={style.handlerName}>{item.handlerName}</span></h5>
         </div>
        
       </div>
-        <div className={style.para}>{elem.tweets[0].TweetReplies[0].tweetReplyText}</div>
+        <div className={style.para}>{item.tweetReplyText}</div>
 
         <div className={style.bottomSection}>
                     <CommentDialogBox/>
@@ -55,29 +53,9 @@ function TweetReplies() {
                      <LikeButton/>
                   </div>
       </div>
-
-
-
-
-       <div className={style.secondDiv}>
-
-       </div>
-      <div className={style.body}>
-        <img  className={style.img} src={Image} alt="Profile" />
-        <div className={style.userDetails}>
-        <h4>{`${elem.tweets[0].TweetReplies[1].name}  ${elem.tweets[0].TweetReplies[1].handlerName}`}</h4>
-        <h5>Replying to <span className={style.handlerName}>{elem.handlerName}</span></h5>
-        </div>
-       
-      </div>
-        <div className={style.para}>{elem.tweets[0].TweetReplies[1].tweetReplyText}</div>
-        <div className={style.bottomSection}>
-                    <CommentDialogBox/>
-                    <RetweetButton/>
-                     <LikeButton/>
-                  </div>
       </>
       )}
+     
     </div>
   )
 }

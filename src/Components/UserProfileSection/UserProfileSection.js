@@ -23,6 +23,7 @@ function UserProfileSection() {
   })
        const navigate = useNavigate()
     const newdata=JSON.parse(localStorage.getItem("userData"))
+
     const data=[newdata]
     function handleClick(){
         navigate("/HomePage")
