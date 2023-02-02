@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './TweetReplies.module.css'
 import Image from "../../Assest/Image/Profile.png"
 import { useParams } from 'react-router-dom'
@@ -11,6 +11,8 @@ import LikeButton from '../../Atom/LikeButton/LikeButton'
 function TweetReplies() {
     const tweetData=useRecoilValue(IspostAtom)
 
+
+
   
     const id = useParams();
     const uid=id.id
@@ -20,6 +22,18 @@ function TweetReplies() {
       return uid==item.id
     })
       
+
+    // console.log(data)
+
+  //   const newTweet={
+  //     name : 'Kirti',
+  //     handlerName : '@Kirti567',
+  //     tweetReplyText : 'Lorem Ipsum is simply dummy text of the printing'
+  // }
+
+    let newData=data[0].tweets[0].TweetReplies.push()
+    console.log(newData)
+    
   return (
     <div className={style.main}>
       {data.map((elem)=>
