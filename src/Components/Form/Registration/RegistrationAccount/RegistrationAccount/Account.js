@@ -29,7 +29,14 @@ function Account() {
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
   const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
-  const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
+  // const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
+  const [data,setData] = useState({
+    Name ,
+...(Phone && {Phone}),
+...(Email && {Email}),
+   Password,
+   
+})
 
 
   function submitFunction(e){
@@ -62,9 +69,18 @@ function Account() {
           alert('add strong Password !!')
            return
     }
-    localStorage.setItem('userData',JSON.stringify(userData))
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+setData(data)
+setData({ ...data, [Name]: Name });
+ 
+    users.push(data)
+      
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // localStorage.setItem('userData',JSON.stringify(data))
     alert("successfully submited")
-    setLoggedInUser(userData)
+    // setLoggedInUser(userData)
         setUserLoginStatus(true)
         navigate("/HomePage")
 }
@@ -73,14 +89,8 @@ function Account() {
 
 
 
-  const userData = {
-    Name ,
-...(Phone && {Phone}),
-...(Email && {Email}),
-   Password,
-   
-}
-console.log(userData)
+  // const userData = 
+// console.log(userData)
 
 
 
@@ -90,6 +100,7 @@ console.log(userData)
 
   function HandlePhone(InputPhone) {
     setPhone(InputPhone);
+   
    
   }
 

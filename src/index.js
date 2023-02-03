@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import Registration from './Components/Form/Registration/Registration/Registration';
 import Login from './Components/Form/LoginPage/LogIn/LoginPage';
 import HomePage from './Components/HomePage/HomePage';
+import { Redirect } from 'react-router-dom';
+import  {Route } from 'react-router-dom'
+
 
 
 import {
@@ -25,7 +28,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     element: <App/>,
   },
   {
@@ -55,7 +58,7 @@ const router = createBrowserRouter([
 
 root.render(
   <RecoilRoot>
-
+    
    <RouterProvider router={router} />
 
   </RecoilRoot>

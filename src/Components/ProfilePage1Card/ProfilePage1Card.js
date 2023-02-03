@@ -19,7 +19,7 @@ function ProfilePage1Card() {
     return uid==item.id
   })
     
-console.log(data)
+// console.log(data)
  
   return (
  <>

@@ -8,33 +8,22 @@ import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
 import RetweetButton from '../../Atom/RetweetButton/RetweetButton'
 import LikeButton from '../../Atom/LikeButton/LikeButton'
 
+
 function TweetReplies() {
     const tweetData=useRecoilValue(IspostAtom)
-
- const userData= JSON.parse(localStorage.getItem("userData"))
-
-  
+   
     const id = useParams();
     const uid=id.id
     // console.log(uid)
   
     const data= tweetData.filter((item)=>{
       return uid==item.id
-    })
-    const replies=[
-      {
-        name : userData.Name,
-        handlerName : userData.Email,
-        tweetReplyText : 'Lorem Ipsum is simply dummy text of the printing'
-    },
-    ]
-   const newData= data[0].tweets[0].TweetReplies.concat(replies)
-console.log( data[0].tweets[0].TweetReplies.concat(replies))
+    }) 
+//  console.log(tweetData)
 
-    
   return (
     <div className={style.main}>
-      { newData.map((item)=>
+      { tweetData.map((item)=>
       <>
           <div className={style.firstdiv}>
       <div className={style.body}>

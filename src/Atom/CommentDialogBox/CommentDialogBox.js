@@ -26,12 +26,17 @@ export default function CommentDialogBox() {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const userData= JSON.parse(localStorage.getItem("userData"))
 // console.log(newdata)
   function handleSummit(){
- const newData=tweet[0].tweets[0].TweetReplies
-setTweet({newData},...tweet)
-console.log(tweet)
+    const obj= {
+      name : userData.Name,
+      handlerName : userData.Email,
+      tweetReplyText : data,
+  } 
+
+  // setTweet([obj, ...tweet[0].tweets[0].TweetReplies])
+  // console.log([obj, ...tweet[0].tweets[0].TweetReplies])
    setData(data)
    setData('')
    setCount(count +1)
