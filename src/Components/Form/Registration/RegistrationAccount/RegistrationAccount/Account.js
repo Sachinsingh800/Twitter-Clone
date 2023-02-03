@@ -29,15 +29,16 @@ function Account() {
   const [Phone, setPhone] = useState(" ");
   const [Password, setPassword] = useState(" ");
   const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
-  // const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
-  const [data,setData] = useState({
-    Name ,
-...(Phone && {Phone}),
-...(Email && {Email}),
-   Password,
-   
-})
+  const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
 
+
+  // let initialValue
+  // if(localStorage.getItem("userData")==null ){
+  //   initialValue=[]
+  // }else{
+  //   initialValue=JSON.parse(localStorage.getItem("userData"))
+  // }
+  const [data,setData] = useState([])
 
   function submitFunction(e){
     e.preventDefault()
@@ -69,28 +70,32 @@ function Account() {
           alert('add strong Password !!')
            return
     }
-    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-setData(data)
-setData({ ...data, [Name]: Name });
- 
-    users.push(data)
-      
-    localStorage.setItem("users", JSON.stringify(users));
+    const userData = {
+      Name ,
+  ...(Phone && {Phone}),
+  ...(Email && {Email}),
+     Password,
+     
+  }
 
-    // localStorage.setItem('userData',JSON.stringify(data))
+   data.push(userData)
+    setData({...data,userData})
+
+    console.log(data)
+    localStorage.setItem('userData',JSON.stringify(data))
     alert("successfully submited")
-    // setLoggedInUser(userData)
+    setLoggedInUser(userData)
         setUserLoginStatus(true)
         navigate("/HomePage")
 }
 
 
+//  const newData =JSON.parse(localStorage.getItem('userData')) 
 
 
 
-  // const userData = 
-// console.log(userData)
+
 
 
 
@@ -100,7 +105,6 @@ setData({ ...data, [Name]: Name });
 
   function HandlePhone(InputPhone) {
     setPhone(InputPhone);
-   
    
   }
 

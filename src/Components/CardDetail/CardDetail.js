@@ -20,7 +20,7 @@ export default function CardDetail() {
     const tweetData=useRecoilValue(IspostAtom)
     // const [isShow ,]
 
-console.log(tweetData)
+// console.log(tweetData)
 
 
     return(
