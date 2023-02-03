@@ -14,8 +14,12 @@ export default function PopoverPopupState() {
 
 
  const data=JSON.parse(localStorage.getItem("userData")) 
- const userData=[data]
-// console.log( userData)
+ console.log(data)
+
+//  const newdata= data.filter((item)=>{
+//   return id==item.id
+// })
+  
 
   function Logout(){
     setUserLoggedInStatus (false)
@@ -31,7 +35,7 @@ export default function PopoverPopupState() {
              
               <span><img  className={style.img} src={Image}></img></span> 
                <span>
-               { userData.map((item)=>
+               { data.map((item)=>
                <>
                    <div className={style.name}>{item.Name}</div> 
               
@@ -59,7 +63,7 @@ export default function PopoverPopupState() {
           >
             <Typography sx={{ p: 2 }}>
                 <ul>
-                { userData.map((item)=>
+                { data.map((item)=>
                 <div onClick={Logout}><h4>Logout-</h4>{item.Email}</div>
 )}
                </ul>

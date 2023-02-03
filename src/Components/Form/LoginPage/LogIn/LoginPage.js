@@ -23,10 +23,11 @@ function Toggle(e){
 
    if(inputData === ""){
     alert("please fill the Input Field!!!!")
-  
    
-    }else{
-     if (inputData === storageData.Email || inputData === storageData.Phone){
+   
+    }
+    const user=storageData.find((user)=>user.Email===inputData)
+    if(user){
       setIsToggle(true)
      }
      else{
@@ -34,7 +35,6 @@ function Toggle(e){
      }
       
      // alert("fill the correct data")
-    }
   }
 
 

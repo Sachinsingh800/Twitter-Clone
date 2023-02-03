@@ -22,9 +22,9 @@ function UserProfileSection() {
     return 10==item.id
   })
        const navigate = useNavigate()
-    const newdata=JSON.parse(localStorage.getItem("userData"))
+    const data=JSON.parse(localStorage.getItem("userData"))
 
-    const data=[newdata]
+ 
     function handleClick(){
         navigate("/HomePage")
        }

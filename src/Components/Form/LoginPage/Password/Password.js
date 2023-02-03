@@ -26,9 +26,9 @@ const navigate = useNavigate()
   
  
   const data=JSON.parse(localStorage.getItem("userData"))
-
+  const user=data.find((user)=>user.Password===Password)
    
-     if(data.Password === Password ){
+     if(user){
       alert("Log in successful✅")
       setUserLoggedInStatus (true)
 

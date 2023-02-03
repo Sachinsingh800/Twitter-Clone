@@ -1,13 +1,9 @@
-
-
 import style from './CardDetail.module.css'
 import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
 import LikeButton from '../../Atom/LikeButton/LikeButton'
 import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
 import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
-import { IspostAtom } from '../../RecoilState/RecoilAtom'
-import { useRecoilValue } from 'recoil'
 import { useEffect, useState } from 'react'
 
 
@@ -18,22 +14,17 @@ import { useEffect, useState } from 'react'
 
 
 export default function CardDetail() {
-    // const tweetData=useRecoilValue(IspostAtom)
-    // const [isShow ,]
-    const [data, setData] = useState([])
+  
+    const newData=JSON.parse(localStorage.getItem("userTweets"))
+    const [data, setData] = useState(newData)
 
     useEffect(()=>{
-        const tweetData=JSON.parse(localStorage.getItem("userTweets"))
-        setData(tweetData)
-    },[])
- 
-    // console.log(data)
-      
-  
-
-// console.log(tweetData)
-
-
+        if(JSON.parse(localStorage.getItem("userTweets"))){
+            const newData=JSON.parse(localStorage.getItem("userTweets"))
+         setData(newData)
+        }
+       },[])
+     
     return(
              
                  <div className={style.ImageWrapper}>

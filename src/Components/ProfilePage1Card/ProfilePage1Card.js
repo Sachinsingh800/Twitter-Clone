@@ -2,25 +2,22 @@ import React  from 'react'
 import style from './ProfilePage1Card.module.css'
 import Image from "../../Assest/Image/Profile.png"
 import { useParams } from 'react-router-dom'
-import { IspostAtom } from '../../RecoilState/RecoilAtom'
-import { useRecoilValue } from 'recoil'
+
 
 
 
 function ProfilePage1Card() {
-  const tweetData=useRecoilValue(IspostAtom)
 
+const tweetData=JSON.parse(localStorage.getItem("userTweets"))
   
   const id = useParams();
   const uid=id.id
-  // console.log(uid)
+
 
   const data= tweetData.filter((item)=>{
     return uid==item.id
   })
     
-// console.log(data)
- 
   return (
  <>
  {data.map((elem)=>
