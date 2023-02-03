@@ -135,8 +135,10 @@ const newData=JSON.parse(localStorage.getItem("userData"))
     setData(" ")
     inputRef.current.value=""
   }
- 
-    localStorage.setItem("userTweets",JSON.stringify(tweet))
+
+  localStorage.setItem("userTweets",JSON.stringify(tweet))
+
+   
   
 
  

@@ -8,6 +8,7 @@ import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
 import { IspostAtom } from '../../RecoilState/RecoilAtom'
 import { useRecoilValue } from 'recoil'
+import { useEffect, useState } from 'react'
 
 
 
@@ -17,8 +18,17 @@ import { useRecoilValue } from 'recoil'
 
 
 export default function CardDetail() {
-    const tweetData=useRecoilValue(IspostAtom)
+    // const tweetData=useRecoilValue(IspostAtom)
     // const [isShow ,]
+    const [data, setData] = useState([])
+
+    useEffect(()=>{
+        const tweetData=JSON.parse(localStorage.getItem("userTweets"))
+        setData(tweetData)
+    },[data])
+ 
+      
+  
 
 // console.log(tweetData)
 
@@ -26,7 +36,7 @@ export default function CardDetail() {
     return(
              
                  <div className={style.ImageWrapper}>
-                     {tweetData.map((item,id)=>
+                     {data.map((item,id)=>
                      <>
                          <div className={style.heading}>
                                 <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   
