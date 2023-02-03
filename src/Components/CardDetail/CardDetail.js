@@ -25,8 +25,9 @@ export default function CardDetail() {
     useEffect(()=>{
         const tweetData=JSON.parse(localStorage.getItem("userTweets"))
         setData(tweetData)
-    },[data])
+    },[])
  
+    // console.log(data)
       
   
 

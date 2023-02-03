@@ -30,8 +30,14 @@ function Account() {
   const [Password, setPassword] = useState(" ");
   const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
   const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
+const [data,setData] = useState([])
 
-
+useEffect(()=>{
+ if(JSON.parse(localStorage.getItem("userData"))){
+  const newData=JSON.parse(localStorage.getItem("userData"))
+  setData(newData)
+ }
+},[])
   function submitFunction(e){
     e.preventDefault()
     if(!isValidString(Name))
@@ -62,7 +68,9 @@ function Account() {
           alert('add strong Password !!')
            return
     }
-    localStorage.setItem('userData',JSON.stringify(userData))
+    data.push(userData)
+    setData(data)
+    localStorage.setItem('userData',JSON.stringify(data))
     alert("successfully submited")
     setLoggedInUser(userData)
         setUserLoginStatus(true)
