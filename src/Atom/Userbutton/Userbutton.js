@@ -23,6 +23,7 @@ export default function PopoverPopupState() {
 
   function Logout(){
     setUserLoggedInStatus (false)
+    localStorage.removeItem("userData")
     window.location.assign("/Login")
   }
   return (
