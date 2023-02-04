@@ -99,8 +99,8 @@ function handleOnSelectImage (e) {
     
     const newTweet =  {
       id: 10,
-      name  : newData.Name,
-      handlerName : newData.Email ,
+      name  : newData[0].Name,
+      handlerName : newData[0].Email ,
       organization : "",
       followers : 200,
       followings : 400,

@@ -19,10 +19,8 @@ export default function CardDetail() {
     const [data, setData] = useState(newData)
 
     useEffect(()=>{
-        if(JSON.parse(localStorage.getItem("userTweets"))){
             const newData=JSON.parse(localStorage.getItem("userTweets"))
          setData(newData)
-        }
        },[])
      
     return(

@@ -13,6 +13,7 @@ import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef  } from 'react';
+import { BsCheckLg } from 'react-icons/bs';
 
 
 
@@ -93,13 +94,13 @@ function handleOnSelectImage (e) {
 const newData=JSON.parse(localStorage.getItem("userData"))
 
 
-  function handleSummit(e){
-    e.preventDefault()
+  function handleSummit(){
+   
     
     const newTweet =  {
       id: 10,
-      name  : newData.Name,
-      handlerName : newData.Email ,
+      name  : newData[0].Name,
+      handlerName : newData[0].Email ,
       organization : "",
       followers : 200,
       followings : 400,

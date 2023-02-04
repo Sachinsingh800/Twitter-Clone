@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom'
 
 function UserProfileSection() {
   const tweetData=useRecoilValue(IspostAtom)
-  console.log(tweetData)
+ 
 
   const id = useParams();
   const uid=id.id
