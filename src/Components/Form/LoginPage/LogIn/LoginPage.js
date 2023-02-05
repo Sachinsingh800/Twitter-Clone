@@ -18,6 +18,8 @@ function Login() {
 
 const storageData =JSON.parse(localStorage.getItem("userData"))
 
+
+
 function Toggle(e){
  e.preventDefault()
 
@@ -27,6 +29,7 @@ function Toggle(e){
    
     }
     const user=storageData.find((user)=>user.Email===inputData)
+    localStorage.setItem("loginUser",JSON.stringify(user))
     if(user){
       setIsToggle(true)
      }

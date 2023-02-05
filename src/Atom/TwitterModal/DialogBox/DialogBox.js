@@ -26,11 +26,16 @@ export default function DialogBox() {
 
   const [image,setImage] = useState('')
     const inputRef = useRef(null)
-
+    let initialValues
+    if(localStorage.getItem("userTweets") == null){
+      initialValues=[]
+    }else{
+        initialValues=JSON.parse(localStorage.getItem("userTweets"))
+    }
 
 
   const [data, setData] = useState("")
-  const [tweet, setTweet] = useRecoilState(IspostAtom)
+  const [tweet, setTweet] = useState(initialValues)
   const [open, setOpen] = React.useState(false);
   // const [tweetData,setTweetData] = useState( postData )
   // console.log(tweet)
@@ -130,14 +135,19 @@ const newData=JSON.parse(localStorage.getItem("userData"))
         
       ],
     }
-    setTweet([newTweet, ...tweet])
+
+setTweet([newTweet, ...tweet])
+
     setOpen(false);
     setImage(" ")
     setData(" ")
     inputRef.current.value=""
-    localStorage.setItem("userTweets",JSON.stringify(tweet))
+ 
   }
+useEffect(()=>{
+localStorage.setItem("userTweets",JSON.stringify(tweet))
 
+},[tweet])
 
 
    

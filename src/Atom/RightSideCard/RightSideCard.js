@@ -40,7 +40,7 @@ function RightSideCard() {
   
   ]
   )
-  //  console.log(data)
+  //  console.table(data)
   // localStorage.setItem("trendData",JSON.stringify(data)) 
 
 

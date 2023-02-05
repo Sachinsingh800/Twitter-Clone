@@ -22,7 +22,8 @@ function UserProfileSection() {
     return 10==item.id
   })
        const navigate = useNavigate()
-    const data=JSON.parse(localStorage.getItem("userData"))
+    const newdata=JSON.parse(localStorage.getItem("loginUser"))
+    const data=[newdata]
 
  
     function handleClick(){

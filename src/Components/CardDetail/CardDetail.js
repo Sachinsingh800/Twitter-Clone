@@ -14,14 +14,17 @@ import { useEffect, useState } from 'react'
 
 
 export default function CardDetail() {
-  
-    const newData=JSON.parse(localStorage.getItem("userTweets"))
-    const [data, setData] = useState(newData)
 
-    useEffect(()=>{
-            const newData=JSON.parse(localStorage.getItem("userTweets"))
-         setData(newData)
-       },[])
+ 
+  
+    const [data, setData] = useState([])
+
+       useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('userTweets'));
+        if (items) {
+         setData(items);
+        }
+      }, []);
      
     return(
              

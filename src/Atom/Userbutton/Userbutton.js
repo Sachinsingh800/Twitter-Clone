@@ -13,8 +13,9 @@ export default function PopoverPopupState() {
   const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom)
 
 
- const data=JSON.parse(localStorage.getItem("userData")) 
- console.log(data)
+ const newdata=JSON.parse(localStorage.getItem("loginUser")) 
+const data=[newdata]
+//  console.log(data)
 
 //  const newdata= data.filter((item)=>{
 //   return id==item.id
@@ -23,7 +24,7 @@ export default function PopoverPopupState() {
 
   function Logout(){
     setUserLoggedInStatus (false)
-    localStorage.removeItem("userData")
+    localStorage.removeItem("loginUser")
     window.location.assign("/Login")
   }
   return (

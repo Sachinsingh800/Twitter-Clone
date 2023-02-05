@@ -13,7 +13,6 @@ export const isUserLoggedInAtom  = atom({
     default:postData,
   })
   
-
   export const loggedInUserAtom = atom ({
     key : 'loggedInUser' ,
     default : null 

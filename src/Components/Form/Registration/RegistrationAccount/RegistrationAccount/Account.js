@@ -72,6 +72,7 @@ useEffect(()=>{
     data.push(userData)
     setData(data)
     localStorage.setItem('userData',JSON.stringify(data))
+    localStorage.setItem('loginUser',JSON.stringify(userData))
     alert("successfully submited")
     setLoggedInUser(userData)
         setUserLoginStatus(true)
