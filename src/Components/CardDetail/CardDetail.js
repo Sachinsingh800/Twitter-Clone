@@ -18,14 +18,15 @@ export default function CardDetail() {
  
   
     const [data, setData] = useState([])
+    console.log(data)
 
        useEffect(() => {
         const items = JSON.parse(localStorage.getItem('userTweets'));
-        if (items) {
+
          setData(items);
-        }
-      }, []);
-     
+         console.log(data)
+      },[]);
+      console.log(data)
     return(
              
                  <div className={style.ImageWrapper}>
