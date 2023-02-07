@@ -5,6 +5,8 @@ import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
 import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { FcLike } from 'react-icons/fc'
+import { BsSuitHeart } from 'react-icons/bs'
 
 
 
@@ -14,25 +16,50 @@ import { useEffect, useState } from 'react'
 
 
 export default function CardDetail() {
-
+  const likes=JSON.parse(localStorage.getItem("userTweets"))
  
+  const [isShow, setShow] = useState(false)
+  const [count,setCount] =useState(10)
+
+
+
+
+function Counter(id){
+
+   const newData=likes.filter((item)=>item.id ===id)
+    newData[0].tweets[0].likesCount=count
+
+  console.log(newData)
+
+  setShow(!isShow)
   
+  if(isShow==true){
+    setCount(count-1)
+  }else{
+    setCount(count+1)
+  }
+ 
+}
     const [data, setData] = useState([])
     console.log(data)
 
-       useEffect(() => {
-        const items = JSON.parse(localStorage.getItem('userTweets'));
 
-         setData(items);
-         console.log(data)
+    function getData(){
+      const items = JSON.parse(localStorage.getItem('userTweets'));
+      setData(items);
+    }
+
+       useEffect(() => {
+       getData()
       },[]);
+
       console.log(data)
     return(
              
                  <div className={style.ImageWrapper}>
                      {data.map((item,id)=>
                      <>
-                         <div className={style.heading}>
+                         <div key={id} className={style.heading}>
                                 <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   
                                 
                                
@@ -50,7 +77,7 @@ export default function CardDetail() {
                 <div className={style.bottomSection}>
                     <CommentDialogBox/>
                     <RetweetButton/>
-                     <LikeButton />
+                     <LikeButton   handleClicked={()=>Counter(item.id)}/>
                   </div>
 
                      </>
