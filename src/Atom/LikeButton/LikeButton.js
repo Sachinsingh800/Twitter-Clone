@@ -4,12 +4,16 @@ import {BsSuitHeart} from 'react-icons/bs';
 import {FcLike} from 'react-icons/fc';
 import style from "./LikeButton.module.css"
 
-function LikeButton() {
+function LikeButton({handleclicked}) {
     const [isShow, setShow] = useState(false)
     const [count,setCount] =useState(10)
 
-    localStorage.setItem("likes",JSON.stringify(count))
+  const likes=JSON.parse(localStorage.getItem("userTweets"))
+  
+  console.log(likes)
 
+    localStorage.setItem("likes",JSON.stringify(count))
+ 
     function Counter(){
       setShow(!isShow)
       if(isShow==true){
@@ -21,7 +25,7 @@ function LikeButton() {
     }
   return (
     <div>
-      <button className={style.button}  onClick={Counter}><span className={style.icon}>{isShow ? <span style={{fontSize:"20px"}}><FcLike/></span> : <BsSuitHeart/> }</span>{ isShow ?  count :  count }</button>
+      <button className={style.button}  onClick={handleclicked}><span className={style.icon}>{isShow ? <span style={{fontSize:"20px"}}><FcLike/></span> : <BsSuitHeart/> }</span>{ isShow ?  count :  count }</button>
     </div>
   )
 }

@@ -50,7 +50,7 @@ export default function CardDetail() {
                 <div className={style.bottomSection}>
                     <CommentDialogBox/>
                     <RetweetButton/>
-                     <LikeButton/>
+                     <LikeButton />
                   </div>
 
                      </>
