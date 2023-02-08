@@ -21,7 +21,12 @@ export default function CardDetail() {
   const [isShow, setShow] = useState(false)
   const [count,setCount] =useState(10)
 
-
+function Comment(id){
+  const newData=likes.filter((item)=>item.id === id)
+  const handlerName=newData[0].handlerName
+ localStorage.setItem("handlername",JSON.stringify(handlerName))
+ 
+}
 
 
 function Counter(id){
@@ -44,10 +49,8 @@ localStorage.setItem("likes",JSON.stringify( newData))
     console.log(data)
 
 
-  
 
        useEffect(() => {
-     
         const items = JSON.parse(localStorage.getItem('userTweets'));
         setData(items);
 
@@ -65,11 +68,12 @@ localStorage.setItem("likes",JSON.stringify( newData))
                      <>
                          <div key={id} className={style.heading}>
                                 <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   
-                                
-                               
+    
                                 <h2>{item?.name}</h2>
                                  <p>{item?.handlerName}</p>
+                                 
                         </div>
+                        <p>{`${item?.hardcode} ${item?.userhandlername}`}</p>
                         <p>{item?.tweets[0]?.tweetText}</p>
                      <img
                        className={style.image}
@@ -79,7 +83,7 @@ localStorage.setItem("likes",JSON.stringify( newData))
                      
 
                 <div className={style.bottomSection}>
-                    <CommentDialogBox/>
+                    <CommentDialogBox   handleClicked={()=>Comment(item.id)}/>
                     <RetweetButton/>
                      <LikeButton   handleClicked={()=>Counter(item.id)}/>
                   </div>

@@ -11,6 +11,7 @@ import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef  } from 'react';
 import { BiMessageRounded } from 'react-icons/bi';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -20,7 +21,18 @@ const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function CommentDialogBox() {
+export default function CommentDialogBox({ handleClicked}) {
+  const [handleName,setHandleName] = useState(JSON.parse(localStorage.getItem("handlername")))
+
+
+  useEffect(()=>{
+    const  handlerName=JSON.parse(localStorage.getItem("handlername"))
+    setHandleName(handlerName)
+  },[handleName])
+
+  console.log(handleName)
+
+
 
   const [image,setImage] = useState('')
     const inputRef = useRef(null)
@@ -31,6 +43,12 @@ export default function CommentDialogBox() {
         initialValues=JSON.parse(localStorage.getItem("userTweets"))
     }
 
+    const tweetData=JSON.parse(localStorage.getItem("userTweets"))
+   
+    const id = useParams();
+    const uid=id.id
+    // console.log(uid)
+  
 
   const [data, setData] = useState("")
   const [tweet, setTweet] = useState(initialValues)
@@ -97,9 +115,10 @@ function handleOnSelectImage (e) {
 const newData=JSON.parse(localStorage.getItem("loginUser"))
 
 
+
   function handleSummit(){
    
-    
+
     const newTweet =  {
       id: 10,
       name  : newData.Name,
@@ -108,6 +127,9 @@ const newData=JSON.parse(localStorage.getItem("loginUser"))
       followers : 200,
       followings : 400,
       joinedDate : '22 dec 2022',
+      hardcode:"Replying to",
+      userhandlername:handleName,
+
       tweets : [
           {
               tweetText : data,
@@ -192,7 +214,7 @@ localStorage.setItem("userTweets",JSON.stringify(tweet))
                 onChange = {handleOnSelectImage}
                 name = 'tweetPic'
             />
-      <button onClick={handleSummit}   className={style.tweet}>Reply</button>
+      <button  onClick={() => { handleSummit(); handleClicked();}}   className={style.tweet}>Reply</button>
        </Dialog>
       
     </div>

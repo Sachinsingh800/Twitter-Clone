@@ -7,6 +7,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                 tweetText : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ',
@@ -40,6 +42,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                 tweetText : 'If you are a nature-lover who loves to spend time in the jungle and adores the mighty #bigcats, plan a jungle safari in the #HeartofIndia. Wander through the lush green forests and keep your cameras handy!',
@@ -73,6 +77,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                  tweetText : 'राजस्थान के सरकारी स्कूल के स्टूडेंट्स को टीचर्स के लिए पदयात्रा करनी पड़ रही है। कालासर विद्यालय में इस समय 500 स्टूडेंट्स पढ़ रहे हैं, लेकिन स्कूल में टीचर्स के पद खाली पड़े हैं। दसवीं के स्टूडेंट्स का कोर्स भी पूरा नहीं हुआ है।',
@@ -106,6 +112,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                 tweetText : `Free education is education  funded through government spending or charitable organizations rather than tuition funding. Many models of free higher education have been proposed. 
@@ -140,6 +148,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                 tweetText : `Providing a boost to the ‘Make-In-India’ campaign, @Apple is producing & exporting several #iPhone models, 
@@ -174,6 +184,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                  tweetText : `On the birth anniversary of Netaji Subhas Chandra Bose, our humble tribute to one of the greatest leaders of India’s freedom struggle.  
@@ -208,6 +220,8 @@ export const postData = [
         followers : 200,
         followings : 400,
         joinedDate : '22 dec 2022',
+        hardcode:"",
+        userhandlername:"",
         tweets : [
             {
                 tweetText : `There had been no concern even about the number of islands in the country, leave about the development. 
