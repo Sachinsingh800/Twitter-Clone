@@ -10,7 +10,7 @@ import LikeButton from '../../Atom/LikeButton/LikeButton'
 
 
 function TweetReplies() {
-    const tweetData=useRecoilValue(IspostAtom)
+    const tweetData=JSON.parse(localStorage.getItem("userTweets"))
    
     const id = useParams();
     const uid=id.id
@@ -19,18 +19,20 @@ function TweetReplies() {
     const data= tweetData.filter((item)=>{
       return uid==item.id
     }) 
-//  console.log(tweetData)
+    const newdata=data[0].tweets[0].TweetReplies
+    const handlerName =data[0].handlerName
+ console.log(newdata)
 
   return (
     <div className={style.main}>
-      { tweetData.map((item)=>
+      { newdata.map((item)=>
       <>
           <div className={style.firstdiv}>
       <div className={style.body}>
         <img  className={style.img} src={Image} alt="Profile" />
         <div className={style.userDetails}>
         <h4>{`${item.name}  ${item.handlerName}`}</h4>
-        <h5>Replying to <span className={style.handlerName}>{item.handlerName}</span></h5>
+        <h5>Replying to <span className={style.handlerName}>{handlerName}</span></h5>
         </div>
        
       </div>

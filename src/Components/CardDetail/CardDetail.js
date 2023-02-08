@@ -26,10 +26,10 @@ export default function CardDetail() {
 
 function Counter(id){
 
-   const newData=likes.filter((item)=>item.id ===id)
+   const newData=likes.filter((item)=>item.id === id)
     newData[0].tweets[0].likesCount=count
-
-  console.log(newData)
+localStorage.setItem("likes",JSON.stringify( newData))
+  // console.log(newData)
 
   setShow(!isShow)
   
@@ -44,13 +44,17 @@ function Counter(id){
     console.log(data)
 
 
-    function getData(){
-      const items = JSON.parse(localStorage.getItem('userTweets'));
-      setData(items);
-    }
+  
 
        useEffect(() => {
-       getData()
+     
+        const items = JSON.parse(localStorage.getItem('userTweets'));
+        setData(items);
+
+        return () => {
+    
+         
+        };
       },[]);
 
       console.log(data)
@@ -64,7 +68,7 @@ function Counter(id){
                                 
                                
                                 <h2>{item?.name}</h2>
-                                 <h5>{item?.handlerName}</h5>
+                                 <p>{item?.handlerName}</p>
                         </div>
                         <p>{item?.tweets[0]?.tweetText}</p>
                      <img

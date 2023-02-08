@@ -8,19 +8,17 @@ import { useRecoilValue } from 'recoil'
 import CommentDialogBox from '../../Atom/CommentDialogBox/CommentDialogBox'
 import RetweetButton from '../../Atom/RetweetButton/RetweetButton'
 import LikeButton from '../../Atom/LikeButton/LikeButton'
-import { useParams } from 'react-router-dom'
+
 
 function UserProfileSection() {
-  const tweetData=useRecoilValue(IspostAtom)
  
+ 
+  const tweetdata =JSON.parse(localStorage.getItem("userTweets"))
 
-  const id = useParams();
-  const uid=id.id
-  // console.log(uid)
-
-  const tweetdata= tweetData.filter((item)=>{
+  const newTweetdata= tweetdata.filter((item)=>{
     return 10==item.id
   })
+
        const navigate = useNavigate()
     const newdata=JSON.parse(localStorage.getItem("loginUser"))
     const data=[newdata]
@@ -77,7 +75,7 @@ function UserProfileSection() {
 <img src={Image} className={style.profileimg}></img>
 </div>
 
-{tweetdata.map((item)=>
+{newTweetdata.map((item)=>
 <>
 <div className={style.userbody}>
 <div className={style.tweetbox}>

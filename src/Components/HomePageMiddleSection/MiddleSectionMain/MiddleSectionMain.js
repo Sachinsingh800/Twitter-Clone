@@ -93,14 +93,14 @@ function handleOnSelectImage (e) {
     setOpen(false);
   };
 
-  const newData=JSON.parse(localStorage.getItem("userData"))
+  const newData=JSON.parse(localStorage.getItem("loginUser"))
   function handleSummit(e){
     e.preventDefault()
     
     const newTweet =  {
       id: 10,
-      name  : newData[0].Name,
-      handlerName : newData[0].Email ,
+      name  : newData.Name,
+      handlerName : newData.Email ,
       organization : "",
       followers : 200,
       followings : 400,

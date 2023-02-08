@@ -8,9 +8,6 @@ function LikeButton({handleClicked}) {
   
     const [isShow, setShow] = useState(false)
     const [count,setCount] =useState(10)
-
-
-    localStorage.setItem("likes",JSON.stringify(count))
  
     function handle(){
   
