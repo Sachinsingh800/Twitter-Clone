@@ -55,3 +55,16 @@
         background-color: black;
     }
 }
+@media  (max-width:360px) {
+    html{
+        font-size: 10px;
+    }
+    .main{
+        background-color: rgb(255, 255, 255);
+    }
+    .form{
+        background-color: rgb(255, 255, 255);
+        border-radius: none;
+        box-shadow: none;
+    }
+}

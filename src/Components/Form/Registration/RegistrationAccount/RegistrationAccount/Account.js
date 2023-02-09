@@ -139,7 +139,7 @@ console.log(userData)
             <h6
               style={{
                 color: "#2997f1",
-                marginLeft: "200px",
+                marginLeft: "12.5rem",
                 marginTop: "7px",
               }}
             >
@@ -149,7 +149,7 @@ console.log(userData)
             <h6
               style={{
                 color: "#2997f1",
-                marginLeft: "200px",
+                marginLeft: "12.5rem",
                 marginTop: "7px",
               }}
             >

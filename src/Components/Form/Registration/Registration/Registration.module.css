@@ -40,7 +40,7 @@
 }
 .logo{
     color:blue;
-    font-size:40px;
+    font-size:2.5rem;
     margin-top:10px;
 }
 .link a{
@@ -57,8 +57,24 @@
     margin-left: 1.9rem;
     word-spacing: 2.5px;
 }
+
 @media  (max-width:720px) {
     .main{
         background-color: black;
     }
+}
+@media  (max-width:360px) {
+    html{
+        font-size: 10px;
+    }
+    .main{
+        background-color: rgb(255, 255, 255);
+    }
+    .form{
+        background-color: rgb(255, 255, 255);
+        border-radius: none;
+        box-shadow: none;
+    }
+    
+
 }
