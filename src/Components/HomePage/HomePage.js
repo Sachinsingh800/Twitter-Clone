@@ -13,11 +13,11 @@ function HomePage() {
   const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom)
   const nevigate = useNavigate()
 
-  // useEffect (() => {
-  //     if(!isUserLoggedIn) {
-  //         nevigate('/Login')
-  //     }
-  // },[isUserLoggedIn])
+  useEffect (() => {
+      if(!isUserLoggedIn) {
+          nevigate('/Login')
+      }
+  },[isUserLoggedIn])
 
   return (
     <div className={style.main}>
