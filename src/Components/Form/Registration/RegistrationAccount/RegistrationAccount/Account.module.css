@@ -82,7 +82,12 @@
 
 @media  (max-width:720px) {
     .main{
-        background-color: black;
+        background-color: white;
+    }
+    .form{
+        background-color: rgb(255, 255, 255);
+        border-radius: none;
+        box-shadow: none;
     }
 }
 @media  (max-width:360px) {
