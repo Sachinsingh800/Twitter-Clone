@@ -4,9 +4,7 @@ import LikeButton from '../../Atom/LikeButton/LikeButton'
 import RetweetButton  from '../../Atom/RetweetButton/RetweetButton'
 import Image from '../../Assest/Image/Profile.png'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { FcLike } from 'react-icons/fc'
-import { BsSuitHeart } from 'react-icons/bs'
+import { useState } from 'react'
 
 
 
@@ -17,7 +15,7 @@ import { BsSuitHeart } from 'react-icons/bs'
 
 export default function CardDetail() {
   const likes=JSON.parse(localStorage.getItem("userTweets"))
- 
+//  console.log(likes,"carddetails")
   const [isShow, setShow] = useState(false)
   const [count,setCount] =useState(10)
 
@@ -48,23 +46,14 @@ localStorage.setItem("likes",JSON.stringify( newData))
     const [data, setData] = useState([])
     console.log(data)
 
-
-
-       useEffect(() => {
-        const items = JSON.parse(localStorage.getItem('userTweets'));
-        setData(items);
-
-        return () => {
-    
-         
-        };
-      },[]);
-
-      console.log(data)
+    const items = JSON.parse(localStorage.getItem('userTweets') ) || []
+    console.log(items,"carddetails")
+     
+     
     return(
              
                  <div className={style.ImageWrapper}>
-                     {data.map((item,id)=>
+                     {items.map((item,id)=>
                      <>
                          <div key={id} className={style.heading}>
                                 <Link to={`/ProfilePage/${item?.id}`}> <img className={style.img} src={Image} alt="Profile"/></Link>   

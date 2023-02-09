@@ -23,7 +23,7 @@ const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function MiddleSectionMain() {
+export default function MiddleSectionMain({setTweets}) {
 
   const [image,setImage] = useState('')
     const inputRef = useRef(null)
@@ -105,6 +105,8 @@ function handleOnSelectImage (e) {
       followers : 200,
       followings : 400,
       joinedDate : '22 dec 2022',
+      hardcode:"",
+      userhandlername:"",
       tweets : [
           {
               tweetText : data,
@@ -139,7 +141,7 @@ function handleOnSelectImage (e) {
   }
  
     localStorage.setItem("userTweets",JSON.stringify(tweet))
-  
+    setTweets(tweet)
 
  
   return (

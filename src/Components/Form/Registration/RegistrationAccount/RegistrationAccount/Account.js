@@ -34,14 +34,26 @@ function Account() {
   const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
 const [data,setData] = useState([])
 
+const [islogin,setLogin]= useState(false)
+
+
+console.log(setUserLoginStatus)
+
 useEffect(()=>{
  if(JSON.parse(localStorage.getItem("userData"))){
   const newData=JSON.parse(localStorage.getItem("userData"))
   setData(newData)
  }
+
 },[])
+
+
+
+
   function submitFunction(e){
     e.preventDefault()
+    setLogin(true)
+
     if(!isValidString(Name))
     {
       alert("add proper Name")
@@ -77,6 +89,8 @@ useEffect(()=>{
     alert("successfully submited")
     setLoggedInUser(userData)
         setUserLoginStatus(true)
+     
+        console.log(islogin)
         navigate("/HomePage")
 }
 
@@ -90,10 +104,8 @@ useEffect(()=>{
 ...(Phone && {Phone}),
 ...(Email && {Email}),
    Password,
-   
+   islogin,
 }
-console.log(userData)
-
 
 
   function emailLogin() {

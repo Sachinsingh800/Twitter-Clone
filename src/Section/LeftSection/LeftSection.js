@@ -15,7 +15,7 @@ import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox';
 
 
 
-function LeftSection({toggled}) {
+function LeftSection() {
      const navigate = useNavigate()
   function handleClick(){
     navigate("/HomePage")

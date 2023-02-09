@@ -23,6 +23,8 @@ const Transition = React.forwardRef(function Transition(props, ref ) {
 });
 
 export default function DialogBox() {
+  
+
 
   const [image,setImage] = useState('')
     const inputRef = useRef(null)
@@ -39,7 +41,7 @@ export default function DialogBox() {
   const [open, setOpen] = React.useState(false);
   // const [tweetData,setTweetData] = useState( postData )
   // console.log(tweet)
-
+ 
 
   const iconList = [
     {
@@ -110,6 +112,8 @@ const newData=JSON.parse(localStorage.getItem("loginUser"))
       followers : 200,
       followings : 400,
       joinedDate : '22 dec 2022',
+      hardcode:"",
+      userhandlername:"",
       tweets : [
           {
               tweetText : data,
@@ -144,14 +148,11 @@ setTweet([newTweet, ...tweet])
     inputRef.current.value=""
  
   }
-useEffect(()=>{
+
+
 localStorage.setItem("userTweets",JSON.stringify(tweet))
 
-},[tweet])
 
-
-   
-  
 
  
   return (
