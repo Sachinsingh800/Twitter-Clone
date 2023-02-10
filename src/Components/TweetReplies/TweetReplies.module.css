@@ -23,8 +23,8 @@
     margin-left: 5rem;
 }
 .firstdiv{
-    border: 1px rgb(212, 212, 212) solid;
-    border-top : none;
+    border-bottom: 1px rgb(212, 212, 212) solid;
+  
 }
 .secondDiv{
     border: 1px rgb(212, 212, 212) solid; 

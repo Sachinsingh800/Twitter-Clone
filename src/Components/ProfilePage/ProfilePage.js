@@ -8,9 +8,9 @@ import ProfileSection from '../../Section/ProfileSection/ProfileSection'
 function ProfilePage() {
   return (
     <div className={style.main}>
-    <div  className={style.Section}>< LeftSection/></div>   
+    <div  className={style.LeftSection}>< LeftSection/></div>   
       <ProfileSection/>
-     <div  className={style.Section}><RightSection /></div> 
+     <div  className={style.RightSection}><RightSection /></div> 
     </div>
   )
 }

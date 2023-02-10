@@ -36,7 +36,7 @@ const data=[newdata]
 
              
               <span><img  className={style.img} src={Image}></img></span> 
-               <span>
+               <span className={style.names}>
                { data.map((item)=>
                <>
                    <div className={style.name}>{item.Name}</div> 

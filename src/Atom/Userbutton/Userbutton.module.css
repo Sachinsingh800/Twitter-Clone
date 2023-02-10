@@ -29,12 +29,11 @@ ul li{
 .dot{
     margin-left: 15px;
 }
-@media  (max-width:720px) {
-    .name{
-        visibility: hidden;
-        /* display: none; */
-    }
-    .dot{
-        display: none;
-    }
+@media  (max-width:1200px) {
+  .names{
+    display: none;
+  }
+  .dot{
+    display: none;
+  }
 }
