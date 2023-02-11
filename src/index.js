@@ -18,6 +18,8 @@ import {
 import { RecoilRoot } from 'recoil';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 import UserProfilePage from './Components/UserProfilePage/UserProfilePage';
+import MiddleSectionMain from './Components/HomePageMiddleSection/MiddleSectionMain/MiddleSectionMain';
+import TweetPage from './Components/TweetPage/TweetPage';
 
 
 
@@ -52,8 +54,12 @@ const router = createBrowserRouter([
     path: "/UserProfilePage",
     element: <UserProfilePage />,
   },
+  {
+    path: "/TweetPage",
+    element: <TweetPage />,
+  },
  
-
+  
 ]);
 
 root.render(

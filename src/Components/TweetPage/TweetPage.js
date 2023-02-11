@@ -1,16 +1,21 @@
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
-import style  from './DialogBox.module.css'
-import Image from '../../../Assest/Image/Profile.png'
+import style  from './TweetPage.module.css'
+import Image from '../../Assest/Image/Profile.png'
 import { useState ,useEffect} from 'react';
+import { BsImage } from 'react-icons/bs'
+// import ImageUpload from '../../ImageUpload/ImageUpload';
+import { useRecoilState } from 'recoil';
+import { IspostAtom } from '../../RecoilState/RecoilAtom'
+
 import CollectionsIcon from '@mui/icons-material/Collections';
 import GifBoxOutlinedIcon from '@mui/icons-material/GifBoxOutlined';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef  } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -19,25 +24,24 @@ const Transition = React.forwardRef(function Transition(props, ref ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function DialogBox() {
-  
+export default function TweetPage() {
+    const navigate =useNavigate()
 
+    function navigateHomePage(){
+        navigate("/HomePage")
+    }
 
   const [image,setImage] = useState('')
     const inputRef = useRef(null)
-    let initialValues
-    if(localStorage.getItem("userTweets") == null){
-      initialValues=[]
-    }else{
-        initialValues=JSON.parse(localStorage.getItem("userTweets"))
-    }
+
 
 
   const [data, setData] = useState("")
-  const [tweet, setTweet] = useState(initialValues)
+  const [tweet, setTweet] = useRecoilState(IspostAtom)
   const [open, setOpen] = React.useState(false);
+  // const [tweetData,setTweetData] = useState( postData )
+  // console.log(tweet)
 
- 
 
   const iconList = [
     {
@@ -94,11 +98,10 @@ function handleOnSelectImage (e) {
   const handleClose = () => {
     setOpen(false);
   };
-const newData=JSON.parse(localStorage.getItem("loginUser"))
 
-
-  function handleSummit(){
-   
+  const newData=JSON.parse(localStorage.getItem("loginUser"))
+  function handleSummit(e){
+    e.preventDefault()
     
     const newTweet =  {
       id: 10,
@@ -135,30 +138,22 @@ const newData=JSON.parse(localStorage.getItem("loginUser"))
         
       ],
     }
-
-setTweet([newTweet, ...tweet])
-
+    setTweet([newTweet, ...tweet])
     setOpen(false);
-    setImage(" ")
     setData(" ")
+    setImage(" ")
+    navigate("/HomePage")
     inputRef.current.value=""
- 
   }
-
-
-localStorage.setItem("userTweets",JSON.stringify(tweet))
-
-
+ 
+    localStorage.setItem("userTweets",JSON.stringify(tweet))
+    // setTweets(tweet)
 
  
   return (
-    <div>
-      <button className={style.button1}  onClick={handleClickOpen}>
-        Tweet
-      </button>
-      <Dialog open={open} >
-     
-      <button className={style.button} onClick={handleClose}>x</button>
+    <>
+      <div><span  onClick={navigateHomePage} className={style.backbtn}>←</span></div>
+      <div  className={style.maindiv}>
       <img className={style.image} src={Image} alt="Profile"/>
       <div className={style.dialogBox}>
        <input className={style.input}  onChange={(e)=> setData(e.target.value)} value={data} placeholder="What's happening?"></input>
@@ -183,7 +178,7 @@ localStorage.setItem("userTweets",JSON.stringify(tweet))
 
             <div className={style.tweetFooterWrapper}>
 
-                <div className={style.icons}>
+            <div className={style.icons}>
                     {iconList.map(({icon,action},index) => (
                         <div 
                             onClick={
@@ -204,9 +199,9 @@ localStorage.setItem("userTweets",JSON.stringify(tweet))
 
         </div>
       <button onClick={handleSummit}   className={style.tweet} >Tweet</button>
-       </Dialog>
+       </div>
       
-    </div>
+       </>
   );
 }
 

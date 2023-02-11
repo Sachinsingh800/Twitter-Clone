@@ -21,7 +21,7 @@ console.log(tweets)
          <div className={style.sectionmain}><MiddleSectionMain  setTweets={setTweets}/></div> 
        
        </div>
-       <CardDetail/>
+     <div className={style.CardDetail}>  <CardDetail /></div>
     </div>
   )
 }

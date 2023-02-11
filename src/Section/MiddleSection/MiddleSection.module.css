@@ -30,3 +30,11 @@
     overflow-x: hidden;
 }
 }
+@media  (max-width:547px) {
+    .sectionmain{
+        display: none;
+    }
+    .CardDetail{
+       margin-top: 7.5rem;
+    }
+}

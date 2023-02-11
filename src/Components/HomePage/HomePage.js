@@ -7,6 +7,7 @@ import { isUserLoggedInAtom } from '../../RecoilState/RecoilAtom'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
+import FloatingButton from '../../Atom/FloatingButton/FloatingButton'
 
 function HomePage() {
 
@@ -22,8 +23,11 @@ function HomePage() {
   return (
     <div className={style.main}>
       <div className={style.LeftSection}><LeftSection /></div>
-     <div><MiddleSection /></div>
+     <div><MiddleSection />
+     <div className={style.floatingbtn}><FloatingButton/></div> 
+     </div>
      <div  className={style.RightSection}><RightSection /></div> 
+
     </div>
   )
 }
