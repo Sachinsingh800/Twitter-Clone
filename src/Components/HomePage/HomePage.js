@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import FloatingButton from '../../Atom/FloatingButton/FloatingButton'
+import SideBar from '../../Atom/SideBar/SideBar'
 
 function HomePage() {
 

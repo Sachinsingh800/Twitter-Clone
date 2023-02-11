@@ -4,6 +4,7 @@ import MiddleSectionHeader from "../../Components/HomePageMiddleSection/MiddleSe
 import MiddleSectionMain from '../../Components/HomePageMiddleSection/MiddleSectionMain/MiddleSectionMain'
 import CardDetail from '../../Components/CardDetail/CardDetail'
 import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox'
+import SideBar from '../../Atom/SideBar/SideBar'
 
 
 
