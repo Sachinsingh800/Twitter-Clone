@@ -11,7 +11,7 @@ import {CgProfile} from 'react-icons/cg';
 import {CiCircleMore} from 'react-icons/ci';
 import { Link, useNavigate,  } from 'react-router-dom';
 import PopoverPopupState from '../../Atom/Userbutton/Userbutton'
-import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox';
+import TwitterDialogBox from '../../Atom/TwitterDialogBox/TwitterDialogBox';
 
 
 
@@ -43,7 +43,7 @@ function LeftSection() {
         </Link> ) }
         </div>
       <div className={style.dialogbox}>
-       <DialogBox />
+       <TwitterDialogBox />
       </div>
       <div className={style.OpenPopover}>
       <PopoverPopupState/>

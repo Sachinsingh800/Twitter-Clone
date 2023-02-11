@@ -3,8 +3,8 @@ import style from './MiddleSection.module.css'
 import MiddleSectionHeader from "../../Components/HomePageMiddleSection/MiddleSectionHeader/MiddleSectionHeader"
 import MiddleSectionMain from '../../Components/HomePageMiddleSection/MiddleSectionMain/MiddleSectionMain'
 import CardDetail from '../../Components/CardDetail/CardDetail'
-import DialogBox from '../../Atom/TwitterModal/DialogBox/DialogBox'
-import SideBar from '../../Atom/SideBar/SideBar'
+
+
 
 
 
@@ -22,6 +22,7 @@ console.log(tweets)
          <div className={style.sectionmain}><MiddleSectionMain  setTweets={setTweets}/></div> 
        
        </div>
+      
      <div className={style.CardDetail}>  <CardDetail /></div>
     </div>
   )

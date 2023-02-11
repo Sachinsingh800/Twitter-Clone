@@ -85,14 +85,6 @@ function handleOnSelectImage (e) {
     reader.readAsDataURL(e.target.files[0]);
 }
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const newData=JSON.parse(localStorage.getItem("loginUser"))
   function handleSummit(e){
     e.preventDefault()
