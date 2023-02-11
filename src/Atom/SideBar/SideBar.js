@@ -12,8 +12,26 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Image from '../../Assest/Image/Profile.png'
 import style from './SideBar.module.css'
+import { ImHome2 } from 'react-icons/im';
+import { BiHash } from 'react-icons/bi';
+import { RiFileList2Line, RiNotification2Line } from 'react-icons/ri';
+import { GoMail } from 'react-icons/go';
+import { BsBookmark } from 'react-icons/bs';
+import { CgProfile } from 'react-icons/cg';
+import { CiCircleMore } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
 export default function SideBar() {
+    const Navoption=[
+        {icon:<ImHome2/>, Option: 'Home', path:"/HomePage" },
+       {icon:<BiHash/>,  Option: 'Explore' , },
+       {icon:<RiNotification2Line/>,  Option: 'Notification' , },
+       { icon:<GoMail/>, Option: 'Messages' , },
+       { icon:<BsBookmark/>, Option: 'BookMarks' ,},
+       { icon:<RiFileList2Line/>,  Option: 'List' ,},
+       { icon:<CgProfile/>,   Option:"Profile" , path:"/UserProfilePage"},
+         {icon:<CiCircleMore/>,   Option: 'More' ,},
+     ]
   const [state, setState] = React.useState({
     left: false,
   });
@@ -38,15 +56,17 @@ export default function SideBar() {
       </List>
       <Divider />
       <List>
-        {['Profile', 'TwitterBlue', 'Topic','Bookmark','List','TwitterCircle'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {Navoption.map(({icon,Option ,path}) => (
+            <Link to={path} className={style.link}> 
+          <ListItem  disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+               {icon}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={Option} />
             </ListItemButton>
           </ListItem>
+          </Link>
         ))}
       </List>
     </Box>

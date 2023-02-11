@@ -2,3 +2,7 @@
     height: 3rem;
     width: 3rem;
 }
+.link{
+    text-decoration: none;
+    color: black;
+}
